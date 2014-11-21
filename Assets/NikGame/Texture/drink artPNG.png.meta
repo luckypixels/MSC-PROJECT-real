@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 34f90ff91cdd641c89ad71fcad9b30c8
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Whiskey
+    21300002: CocktailBig
+    21300004: CocktailThin
+    21300006: Shot
+    21300008: BeerPint
+    21300010: WineGlass
+    21300012: Coke
+    21300014: Kebab
+    21300016: BeerBottleGreen
+    21300018: BeerBottleBrown
+    21300020: WineBottle
+    21300022: Burger
+    21300024: Poison
+    21300026: Champagne
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Whiskey
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 403
+        width: 110
+        height: 353
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CocktailBig
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 405
+        width: 142
+        height: 222
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CocktailThin
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 384
+        width: 149
+        height: 254
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Shot
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 9
+        width: 66
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BeerPint
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 7
+        width: 107
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WineGlass
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 9
+        width: 86
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coke
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 21
+        width: 79
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Kebab
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 12
+        width: 214
+        height: 114
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BeerBottleGreen
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 9
+        width: 81
+        height: 317
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BeerBottleBrown
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 80
+        height: 315
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WineBottle
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 354
+        width: 91
+        height: 367
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Burger
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 346
+        width: 180
+        height: 144
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Poison
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 333
+        width: 115
+        height: 362
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Champagne
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 333
+        width: 119
+        height: 379
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
