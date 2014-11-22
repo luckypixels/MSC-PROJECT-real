@@ -9,3 +9,9 @@ EditorBuildSettings:
     path: Assets/NikGame/Scene/MainMenu Real.unity
   - enabled: 1
     path: Assets/NikGame/Scene/Game 10.unity
+  - enabled: 1
+    path: Assets/levelSelect.unity
+  - enabled: 1
+    path: Assets/NikGame/Scene/infoCardsThumbs.unity
+  - enabled: 1
+    path: Assets/NikGame/Scene/infoCardsFULLVIEW.unity
