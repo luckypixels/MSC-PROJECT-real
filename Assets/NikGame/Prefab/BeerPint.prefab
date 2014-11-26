@@ -14,7 +14,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BeerPint
   m_TagString: Beer
   m_Icon: {fileID: 0}
@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d6ff08c1a36c8488b4a40054c302a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splat: {fileID: 100000, guid: 918c6915f32b0304eaeb057dc9296557, type: 2}
   score: {fileID: 100000, guid: 5c289a5a6b52948f19547e85989f4478, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -98,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7941133c059c46f683bfd48f1d3a771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splat: {fileID: 100000, guid: 918c6915f32b0304eaeb057dc9296557, type: 2}
   score: {fileID: 100000, guid: 5c289a5a6b52948f19547e85989f4478, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:

@@ -501,7 +501,6 @@ GameObject:
   - 212: {fileID: 651594121}
   - 114: {fileID: 651594124}
   - 135: {fileID: 651594123}
-  - 54: {fileID: 651594125}
   m_Layer: 0
   m_Name: next button prototype
   m_TagString: Untagged
@@ -538,7 +537,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 651594120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .333469748, y: -2.27611446, z: 0}
+  m_LocalPosition: {x: -3.10883379, y: .821958542, z: 0}
   m_LocalScale: {x: .436536908, y: .436536759, z: .691715717}
   m_Children: []
   m_Father: {fileID: 0}
@@ -566,21 +565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8eca82888bc493ebb73a12f6b2308e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &651594125
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 651594120}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &778256629
 GameObject:
   m_ObjectHideFlags: 0

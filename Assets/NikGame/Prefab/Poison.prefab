@@ -13,7 +13,7 @@ GameObject:
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Poison
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WineGlassFinal
   m_TagString: Fruit
   m_Icon: {fileID: 0}
@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d6ff08c1a36c8488b4a40054c302a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splat: {fileID: 100000, guid: e9524dd62d25741108360783ab98c4a3, type: 2}
   score: {fileID: 100000, guid: 364378eca027c49bba5a9b8d464e7b94, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:

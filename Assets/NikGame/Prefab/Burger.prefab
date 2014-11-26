@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Burger
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d6ff08c1a36c8488b4a40054c302a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splat: {fileID: 100000, guid: e9524dd62d25741108360783ab98c4a3, type: 2}
   score: {fileID: 100000, guid: 1422d3bdda7df4ec19e4ecc4dc35a037, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -98,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7941133c059c46f683bfd48f1d3a771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splat: {fileID: 100000, guid: e9524dd62d25741108360783ab98c4a3, type: 2}
   score: {fileID: 100000, guid: 1422d3bdda7df4ec19e4ecc4dc35a037, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
