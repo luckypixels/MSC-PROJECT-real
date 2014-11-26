@@ -1,12 +1,16 @@
 using UnityEngine;
 using System.Collections;
 
+
+//the gui that i want will be different on different screens, 
+//wonder if means i need different script 4 each scene, or if can have switch statement checking the name of scene to laod correct gui
+
 public class LevelChanger_GUI : MonoBehaviour 
 {
 
 	public Texture btnTexture; //remember need to assign the artworn b4 calling it
 
-
+/*
 	void OnGUI()
 	{
 		//using art
@@ -23,6 +27,51 @@ public class LevelChanger_GUI : MonoBehaviour
 		}
 	}
 }
+*/
+
+//for main menu
+void OnGUI()  // this "if(GUI_Button)(foo)" syntax is actual syntax that has to be used, cant clean with switch :(
+{
+	//using art
+	//if(GUI.Button(new Rect(Screen.width/2, Screen.height/2, 100, 30), btnTexture))
+	if (GUI.Button(new Rect(240, 140, 160, 40), "Play"))
+		//using text no art:
+		//if(GUI.Button(new Rect(Screen.width/2, Screen.height/2, 100, 30), "Change Level"))
+		{
+			Application.LoadLevel("LevelOne");
+		
+		}
+
+
+		if (GUI.Button(new Rect(240, 140, 160, 40), "Play"))
+			//using text no art:
+			//if(GUI.Button(new Rect(Screen.width/2, Screen.height/2, 100, 30), "Change Level"))
+		{
+			Application.LoadLevel("LevelOne");
+			
+		}
+
+		if (GUI.Button(new Rect(240, 190, 160, 40), "info Cards"))
+			//using text no art:
+			//if(GUI.Button(new Rect(Screen.width/2, Screen.height/2, 100, 30), "Change Level"))
+		{
+			Application.LoadLevel("infoCardsThumbs");
+			
+		}
+		if (GUI.Button(new Rect(240, 240, 160, 40), "Select Level"))
+			//using text no art:
+			//if(GUI.Button(new Rect(Screen.width/2, Screen.height/2, 100, 30), "Change Level"))
+		{
+			Application.LoadLevel("levelSelect");
+			
+		}
+
+
+
+	
+	}//onGui
+
+}//close the class
 
 
 

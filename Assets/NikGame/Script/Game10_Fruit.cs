@@ -13,7 +13,6 @@ public GameObject left;		//The left prefab of the fruit
 	//public float force;	    //The left and right force
 	//public float torque;		//The rotation speed after we are hit
 	*/
-	public GameObject splat;	//The splat prefab of the splat after a player collects item
 	public GameObject score;    //The gui object of te score that is shown after player collects item
 	private bool canBeDead;		//If we can destroy the object
 	private Vector3 screen;		//Position on the screen
@@ -75,22 +74,13 @@ public GameObject left;		//The left prefab of the fruit
 	public void Hit()
 	{
 
-		//Spawn splat prefab
+		//Spawn the score for this obj
 		var localScoreGui=Instantiate(score,new Vector3(transform.position.x,transform.position.y,1),Quaternion.identity);
-		Instantiate(splat,new Vector3(transform.position.x,transform.position.y,1),transform.rotation);
 		//Destroy this object, obviously I have to call the splat instatntiate 1st as it takes this object's position for its paramaters!
 		Destroy(gameObject);
 		//StartCoroutine(DeleteLocalScoreGUI(2.0F));
 		//Destroy (localScoreGui);
 	}
-
-	//Want to have a delay then delete the score-would fade it but cant do that without a mesh (and these are 2d sprites) so have to use yield
-	//yield requires a seperate Ienumertator method and then use as a coroutiene, thousgh its easier in javascript but meh...
-	
-	//IEnumerator DeleteLocalScoreGUI(float waitTime) {
-	//	yield return new WaitForSeconds(waitTime);
-		//print("WaitAndPrint " + Time.time);
-	//}
 
 
 

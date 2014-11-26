@@ -25,6 +25,16 @@ public class Game10_Player : MonoBehaviour
 	
 	void Update ()
 	{
+		/*
+		Allow me to skip between levels
+		 */
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			Debug.Log ("pressed level skip");
+			StartCoroutine("goToNextLevel");//using this syntax rather than functionname() as param as that syntax wont work with StopCoroutine.		
+		}
+
+
+
 		//If dead
 		if (dead)
 		{
@@ -79,56 +89,58 @@ funtion there with switchstatements to see what change to score etc.
 
 	void OnTriggerEnter(Collider other)
 	{
-		//If player hits a drink other than a beer, then they've mixed their drinks which increases sickness lots
-		//if they have a softdrink or eat some food they decrease their sickness
+				//If player hits a drink other than a beer, then they've mixed their drinks which increases sickness lots
+				//if they have a softdrink or eat some food they decrease their sickness
 
-		//this is getting to be a lot of different else ifs-change to a switch for v2.0!!!
-		if (other.tag == "Fruit")
-		{
-			//Run hit function
-			other.GetComponent<Game10_Fruit>().Hit();
-			score -= 5;
-			sickness+=10;
-		}
-		//If we hit poison (want to change to be lose a life rather than instant game over?)
-		else if (other.tag == "Enemy")
-		{
-			//Run hit function
-			other.GetComponent<Game10_Bomb>().Hit();
-		}
+				//this is getting to be a lot of different else ifs-change to a switch for v2.0!!!
 
-		else if (other.tag == "Beer")
-		{
-			//Run hit function
+			switch (other.tag) {
+					case "Fruit":
+					other.GetComponent<Game10_Fruit>().Hit();
+					score -= 5;
+					sickness+=10;
+						break;
+	
+					case "Beer":
 			other.GetComponent<Beer>().Hit();
 			//Add score
 			score += 10;
 			sickness+=1;
-		}
 
-		else if (other.tag == "SoftDrink")
-		{
-			//Run hit function
+						break;	
+
+
+		case "SoftDrink":
 			other.GetComponent<Beer>().Hit();
 			//Add score
 			score += 10;
 			sickness-=5;
-		}
+			break;	
 
-
-		else if (other.tag == "Food")
-		{
-			//Run hit function
+		case "Food":
 			other.GetComponent<Beer>().Hit();
 			//Add score
 			score += 100;
 			sickness-=5;
+			break;	
+
+
+
+		case "Enemy":
+			other.GetComponent<Game10_Bomb>().Hit();
+			break;
+
+				default:
+						Debug.Log ("Default case");
+						break;
+				}
 		}
 
 
-	
-	}
-	
+
+
+
+//currently this is the templates default gui. dont like it but need to have a menu button since iphones dont have the phsyical back buttons of (pre current gen) android devices
 	void OnGUI()
 	{
 		GUI.skin = skin;
@@ -147,13 +159,17 @@ funtion there with switchstatements to see what change to score etc.
 			//Show lives left
 			GUI.Label(new Rect(10,Screen.height - 35,300,300),"Lives: " + lives.ToString());
 		}
-		
+
+
+/*
 		//Menu Button
 		if(GUI.Button(new Rect(Screen.width - 120,0,120,40),"Menu"))
 		{
 			//Load Menu scene
 			Application.LoadLevel("MainMenu");
 		}
+*/
+
 		//If dead
 		if (dead)
 		{
@@ -162,16 +178,27 @@ funtion there with switchstatements to see what change to score etc.
 			{
 				Application.LoadLevel(Application.loadedLevel);
 			}
+
 			//Menu Button
 			if(GUI.Button(new Rect(Screen.width / 2 - 90,Screen.height / 2,180,50),"Menu"))
 			{
 				Application.LoadLevel("Menu");
 			}
 		}	
-	}
+
+}
 
 
+	/*Go to next Level*/
 
+IEnumerator goToNextLevel(){
+	//if (Application.loadedLevel >= Application.levelCount) 
+	//	{ //if this is the last level then we wont be able to go a next level-ret to main menu-except this makes the script break so ignore it for now!!!
+			Debug.Log ("ienumerator method called");
+			yield return new WaitForSeconds (1.5f);
+			Application.LoadLevel (Application.loadedLevel + 1);
+	//}
+}
 
 
 

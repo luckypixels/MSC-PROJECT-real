@@ -21,6 +21,7 @@ public class SoundButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		/* COmmenting out since this isnt for pressing a button and going to screen its just a mouse click anuywhere on screen.
 		if (Input.GetMouseButtonDown (0))       //u prat this isnt saying if button pressed ON THIS OBJECT its saying if pressed regardless of where!
 		{Debug.Log ("sound button pressed");	}
 		//soundButToggle();
@@ -29,7 +30,7 @@ public class SoundButton : MonoBehaviour {
 		{Debug.Log ("sound button pressed");
 			Instantiate(prefabTest,new Vector3(0,0,0),Quaternion.identity);}
 				//soundButToggle();
-		}
+		}*/
 	
 }
 
@@ -45,4 +46,4 @@ public class SoundButton : MonoBehaviour {
 	Debug.LogType("soundMuted is set to"+SoundMuted);
 	}
 */
-//}
+}

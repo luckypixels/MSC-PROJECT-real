@@ -6,7 +6,6 @@ using System.Collections;
 
 
 public class Beer : MonoBehaviour {
-	public GameObject splat;	//The splat prefab
 	public GameObject score;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +20,6 @@ public class Beer : MonoBehaviour {
 //the method to call upon a collision with a beer drink
 	public void Hit(){
 
-				Instantiate (splat, new Vector3 (transform.position.x, transform.position.y, 1), transform.rotation);
 			var localScoreGui=Instantiate(score,new Vector3(transform.position.x,transform.position.y,1),Quaternion.identity);
 
 				//Destroy this object, obviously I have to call the splat instatntiate 1st as it takes this object's position for its paramaters!
