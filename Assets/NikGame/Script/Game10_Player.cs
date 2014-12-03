@@ -7,14 +7,24 @@ public class Game10_Player : MonoBehaviour
 	public int score;		//Score
 	public int lives;		//Lives
 
+	private GameObject levelManager; //just want to check the levelmanager is still active
+	//private GameObject time;
+
 	public int sickness; //the health
 
+	//int timeLeft=getComponent<Timer>.timeForLevel;
 
 	private Vector3 pos;	//Position that the touch occured
 	private bool dead;		//If we are dead
 	
 	void Start ()
 	{
+		/*
+		levelManager = GameObject.Find ("LevelManager");
+
+		levelManager.GetComponent<LevelManager>();
+
+		levelManager.levelManagerCheck ();*/
 		sickness = 0;
 		//Set screen orientation to landscape
 		Screen.orientation = ScreenOrientation.Landscape;
@@ -25,6 +35,11 @@ public class Game10_Player : MonoBehaviour
 	
 	void Update ()
 	{
+		//TODO
+		//put the sickness stuff with a proper gui thing-dont waste time doing it now cos theres a cool new trick can do with the 4.6 gui slider!
+		//Debug.Log ("sickness=" +sickness);
+
+
 		/*
 		Allow me to skip between levels
 		 */
@@ -46,6 +61,7 @@ public class Game10_Player : MonoBehaviour
 		if (lives < 1||sickness>=100)
 		{			
 			//Kill
+			Time.timeScale=0;
 			Debug.Log ("UR DEAD");
 			dead = true;
 			//Set collider to false
@@ -78,13 +94,6 @@ public class Game10_Player : MonoBehaviour
 			transform.position = new Vector3(pos.x,pos.y,0);
 		}
 	}
-
-	/*
-NEED TO ADD THE CLASSES FOR SOFTDRINK AND FOOD COS UR CALLING THE BURGER COMPONENT STILL!
--this is getting really ugly having so many different classes for each type of object-maybe put all functions in a 'onHit' class or have 1 
-funtion there with switchstatements to see what change to score etc. 
-	 */
-
 
 
 	void OnTriggerEnter(Collider other)
@@ -182,7 +191,7 @@ funtion there with switchstatements to see what change to score etc.
 			//Menu Button
 			if(GUI.Button(new Rect(Screen.width / 2 - 90,Screen.height / 2,180,50),"Menu"))
 			{
-				Application.LoadLevel("Menu");
+				Application.LoadLevel("MainMenu Real");
 			}
 		}	
 

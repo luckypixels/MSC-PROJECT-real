@@ -23,10 +23,14 @@ public class Game10_SpawnFruit : MonoBehaviour
 	public GameObject whiskey;
 	public GameObject wineBottle;
 	public GameObject wineGlass;
+	public GameObject pickUpForLevel; //in inspector set the appropriate card pick up
 
-	//the var that is used for the instancing the drink.
-	GameObject prefab;
+	GameObject prefab; //the var that is used for the instancing the drink.
 
+	/* commenting out for now til i can work out why the error...
+	GameObject pickUp; //var for instance of the pick up.
+	int timeToSpawnPickup;//what time to spawn the prefab of this level's collectable
+	*/
 
 	//vars for setting movement of the behaviour of genertated objects
 	public float upForce = 750;			//Up force
@@ -43,6 +47,10 @@ public class Game10_SpawnFruit : MonoBehaviour
 	{
 		//Start the spawn update
 		StartCoroutine("Spawn");
+
+//decide what time in the level the pickUp prefab gets spawned and also choose a position.
+//		timeToSpawnPickUp = (Random.Range (5, 60)); //if i decide to make the levels loger it'd be good to have a var of levelLength and pass this for the range's max value.
+
 	}
 
 
@@ -154,4 +162,16 @@ which is done with another randomrange for which drink.
 		//Start the spawn again
 		StartCoroutine("Spawn");
 	}
-}
+
+	/* commenting it out cos its giving an error or some reason
+	void SpawnPickUp(){
+		Instantiate(pickUp,new Vector3(Random.Range(minX,maxX + 1),transform.position.y,0),Quaternion.Euler(0,0,Random.Range(-50, 50))) as GameObject;
+
+	}
+*/
+
+
+
+
+
+}//close class

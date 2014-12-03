@@ -15,7 +15,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400004}
   m_Layer: 12
-  m_Name: WineGlassFinal
+  m_Name: WineGlass
   m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ba05546d0054903937a208ef409c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WineBottle
+  name: WineGlass
   units: 0
   score: 0
 --- !u!114 &11400004
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ba05546d0054903937a208ef409c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WineGlassFinal
+  name: WineGlass
   units: 0
   score: 0
 --- !u!212 &21200000

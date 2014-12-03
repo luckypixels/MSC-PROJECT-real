@@ -3,26 +3,15 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-	private int score;
+	private int score; //have to use this even tho NOTHING is referenving this script, its justa  testament to how useless unity really is.
 	public int lives;
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("welcome to the new game");
 		//just doing this to see if the call across the class is working
-		score = 100;
-		lives = 3;
+
 	}
 
-
-	//use a generator at set intervals with yield or 
-
-
-
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 void killedEnemy(){
 		score += 100;
@@ -39,5 +28,10 @@ void killedEnemy(){
 		lives+= amount;
 		Debug.Log (lives);
 	}
+
+
+
+
+
 
 }
