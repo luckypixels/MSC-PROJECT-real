@@ -19,13 +19,10 @@ public class Game10_Player : MonoBehaviour
 	
 	void Start ()
 	{
-		/*
-		levelManager = GameObject.Find ("LevelManager");
-
-		levelManager.GetComponent<LevelManager>();
-
-		levelManager.levelManagerCheck ();*/
+		//reset sickness in each level, or could have it so the var is persisitent across levels.
 		sickness = 0;
+
+		///<remarks>The screen orientation and sleep timeout code is taken from the template</remarks>
 		//Set screen orientation to landscape
 		Screen.orientation = ScreenOrientation.Landscape;
 		//Set sleep timeout to never ie dont let the screen go to sleep if inactive
@@ -50,10 +47,9 @@ public class Game10_Player : MonoBehaviour
 
 
 
-		//If dead
+		//If the player has died then they shouldn't be able to interact with the objects (check this isnt going to conflict with gui ie restart button)
 		if (dead)
 		{
-			//Set collider to false
 			collider.enabled = false;
 			return;
 		}
@@ -61,17 +57,17 @@ public class Game10_Player : MonoBehaviour
 		if (lives < 1||sickness>=100)
 		{			
 			//Kill
-			Time.timeScale=0;
-			Debug.Log ("UR DEAD");
+			Time.timeScale=0; //this pauses the game
 			dead = true;
-			//Set collider to false
+			//Set collider to false-why have i repeated the code since its in the if(dead)-try commenting out to make sure its not used and so can safely delete
 			collider.enabled = false;
 		}
-		
+
+		//This code for touch repsonse is taken from the Android template, however its nothing that isnt in any tutorial. obviosy i ahd to chanf platfrom from droid to iOS
 		//If the game is running on a touch device
-		if (Application.platform == RuntimePlatform.IPhonePlayer)
+		if (Application.platform == RuntimePlatform.IPhonePlayer) 
 		{
-			//If we are hitting the screen
+			//If  the palyer touches the screen
 			if (Input.touchCount == 1)
 			{
 				//Find screen touch position
@@ -85,7 +81,7 @@ public class Game10_Player : MonoBehaviour
 			//Set collider to false
 			collider.enabled = false;
 		}
-		//If the game is not running on a touch device which is worth doing since running unity remote is soooo slow
+		//code for quickly testing the game on macbook rather a touch device (which is worth doing since running unity remote is soooo slow)
 		else
 		{
 			//Find mouse position
@@ -96,7 +92,13 @@ public class Game10_Player : MonoBehaviour
 	}
 
 
-	void OnTriggerEnter(Collider other)
+
+	/// <summary>
+	/// /This code is for collisions with the drinks and other objects. 
+	/// Sticking to beer will increase sickness a small amount but any other alcoholic drink will mean they mixed their
+	/// drinks and thus get sick quickly.
+	/// </summary>
+	void OnTriggerEnter(Collider other)   
 	{
 				//If player hits a drink other than a beer, then they've mixed their drinks which increases sickness lots
 				//if they have a softdrink or eat some food they decrease their sickness
@@ -104,9 +106,10 @@ public class Game10_Player : MonoBehaviour
 				//this is getting to be a lot of different else ifs-change to a switch for v2.0!!!
 
 			switch (other.tag) {
-					case "Fruit":
-					other.GetComponent<Game10_Fruit>().Hit();
-					score -= 5;
+				//	case "Fruit":
+					case "badAlcohol":
+			other.GetComponent<alcoholicDrink>().Hit();
+					score -= 50;
 					sickness+=10;
 						break;
 	
@@ -122,7 +125,7 @@ public class Game10_Player : MonoBehaviour
 		case "SoftDrink":
 			other.GetComponent<Beer>().Hit();
 			//Add score
-			score += 10;
+			score += 50;
 			sickness-=5;
 			break;	
 

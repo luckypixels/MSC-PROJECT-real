@@ -57,11 +57,14 @@ public bool level6Unlocked  = false;
 		_instance = this;
 		//its weird that some tuts make out like dont destroy isnt actually needed...
 		//		DontDestroyOnLoad (GameObject this);
+		//Debug.Log ("hello from game manager");
 	}
 
 	// Use this for initialization
 	void Start () {
-		//guiText.text = "hello world"; //if u use the gui.Text object remember to set DoNotDestroy in awake() for it.
+		guiText.text = "the taxiscard unlocked is:"+ taxiInfoCardUnlocked.ToString(); //if u use the gui.Text object remember to set DoNotDestroy in awake() for it.
+		
+
 	}
 
 	/// <summary>
@@ -71,6 +74,7 @@ public bool level6Unlocked  = false;
 	/// </summary>
 	public void callToGameObject(){
 		// Debug.Log (Application.loadedLevelName); //commenting out since kno its working but keep for future use...
+		taxiInfoCardUnlocked = true;
 		Debug.Log ("Taxi Card is" +taxiInfoCardUnlocked);
 	}
 

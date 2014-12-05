@@ -19,6 +19,12 @@ public GameObject left;		//The left prefab of the fruit
 	private GameObject player;	//The player
 	private float rotDir = 50;	//The rotate speed
 	private int playerLives;
+
+	//this is me trying to adapt it so its referencing the gamemanager and not the player
+	private GameObject playerGameManager;	//the reference to the gamemanager
+	private int playerGameManagerLives; //the reference to the lives var in the gamemanager
+
+
 	void Start ()
 	{
 		//If we tag is Fruit
@@ -27,6 +33,14 @@ public GameObject left;		//The left prefab of the fruit
 			//Find player object to access vars like score and lives later on
 			player = GameObject.Find("Player");
 			playerLives =player.GetComponent<Game10_Player>().lives;
+			//want to migrate from the lives and score vars being in Player class and isntead be in GameManager.
+			//the code im using here isnt right in that GameManager is a singleton so i should just say GameManager._instance?
+			playerGameManager = GameObject.Find("GameManager");
+			//playerGameManagerLives =GameManager.GetComponent<GameManager>().lives;
+
+
+
+
 		}
 
 		//set the direction of rotation
@@ -83,23 +97,6 @@ public GameObject left;		//The left prefab of the fruit
 	}
 
 
+	
 
-	/* var BombPrefab : Transform;
- 
-
- function PlantBomb()
- {
-    // var bombPos = transform.position + (transform.forward * 2);
-     var cloneBomb=Instantiate(BombPrefab,bombPos,Quaternion.identity);
-     yield WaitForSeconds(2);
-     Explode();
-     Destroy(cloneBomb);
- }
-*/
-
-
-
-
-
-
-}
+}//close the class

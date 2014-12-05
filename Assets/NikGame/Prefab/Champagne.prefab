@@ -10,12 +10,12 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 54: {fileID: 5400000}
-  - 114: {fileID: 11400000}
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 15
   m_Name: Champagne
-  m_TagString: Fruit
+  m_TagString: badAlcohol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,18 +47,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d6ff08c1a36c8488b4a40054c302a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 100000, guid: 364378eca027c49bba5a9b8d464e7b94, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,6 +61,18 @@ MonoBehaviour:
   name: Champagne
   units: 0
   score: 0
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3837af0bd539f476b99cbf971d8a7e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 100000, guid: 364378eca027c49bba5a9b8d464e7b94, type: 2}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

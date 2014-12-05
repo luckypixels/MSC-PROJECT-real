@@ -6,7 +6,8 @@ public class Game10_Bomb : MonoBehaviour
 	private bool canBeDead;		//If we can destroy the object
 	private Vector3 screen;		//Position on the screen
 	private GameObject player;	//The player
-	
+	public GameObject score;    //The gui object of te score that is shown after player collects item
+
 	void Start ()
 	{
 		//Find the player
@@ -38,6 +39,9 @@ public class Game10_Bomb : MonoBehaviour
 	{
 		//lose a life
 		player.GetComponent<Game10_Player>().lives--;
+		var localScoreGui=Instantiate(score,new Vector3(transform.position.x,transform.position.y,1),Quaternion.identity);
+		//Destroy this object, obviously I have to call the splat instatntiate 1st as it takes this object's position for its paramaters!
+		Destroy(gameObject);
 		//Destroy
 		Destroy(gameObject);
 	}

@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour {
 		if (timeForLevel > 0) {
 						timeForLevel--;
 						countdown.text = "Time : " + timeForLevel;
-			Debug.Log (timeForLevel);
+			//Debug.Log (timeForLevel);
 
 		}
 				if (timeForLevel == 0) {

@@ -11,9 +11,9 @@ GameObject:
   - 212: {fileID: 21200000}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 13
   m_Name: Burger
   m_TagString: Food
@@ -60,18 +60,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.79999995, y: 1.43999994, z: .200000003}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d6ff08c1a36c8488b4a40054c302a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 100000, guid: 1422d3bdda7df4ec19e4ecc4dc35a037, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,6 +83,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7941133c059c46f683bfd48f1d3a771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 100000, guid: 1422d3bdda7df4ec19e4ecc4dc35a037, type: 2}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3837af0bd539f476b99cbf971d8a7e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 100000, guid: 1422d3bdda7df4ec19e4ecc4dc35a037, type: 2}
