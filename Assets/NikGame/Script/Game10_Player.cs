@@ -3,29 +3,26 @@ using System.Collections;
 
 public class Game10_Player : MonoBehaviour
 {
-	public GUISkin skin;	//GUI Skin
+	public GUISkin skin;	//GUI Skin->if i can successfully update all gui stuff to the new UGUI then this can be deleted
 	public int score;		//Score
 	public int lives;		//Lives
 	//since these are going to be used in the singleton class its not quite the same as here where need to have local refs-so does that mean the if lives==0 -> game over should be in the gamecontroller?
-
-
-
-
-
-	private GameObject sickFace;
 	public int sickness; //the health
 
-	//int timeLeft=getComponent<Timer>.timeForLevel;
 
-	private Vector3 pos;	//Position that the touch occured
-	private bool dead;		//If we are dead
-	
+	//int timeLeft=getComponent<Timer>.timeForLevel;
+	private GameObject sickFace; //the avatar graphic that sprite swaps depending on value of sickness var
+	private Vector3 pos;	//Position that touch input was registered
+	private bool dead;		//If the player has died (allows to generate 'restart' buttons etc)
+
+//--------------------------------------INITILISATION---------------------
 	void Start ()
 	{
-		//reset sickness in each level, or could have it so the var is persisitent across levels.
+		//find out from test users if they prefer to reset sickness in each level, or the sickness is persisitent across levels.
 		//sickness = 0;
+		//GameController._instance.sickness;
 
-		///<remarks>The screen orientation and sleep timeout code is taken from the template</remarks>
+		///<remarks>The screen orientation and sleep timeout code is taken from the Android game template</remarks>
 		//Set screen orientation to landscape
 		Screen.orientation = ScreenOrientation.Landscape;
 		//Set sleep timeout to never ie dont let the screen go to sleep if inactive
@@ -33,17 +30,17 @@ public class Game10_Player : MonoBehaviour
 
 		//sickFace = GameObject.Find("sickFaces");
 	}
-	
+
+
+//--------------------------------------UPDATE---------------------
+
 	void Update ()
 	{
 		//TODO
 		//put the sickness stuff with a proper gui thing-dont waste time doing it now cos theres a cool new trick can do with the 4.6 gui slider!
-		//Debug.Log ("sickness=" +sickness);
 
+	//	Allow me to skip between levels, this is obviously just for development period since pressing space bar isnt much use on an ipad
 
-		/*
-		Allow me to skip between levels
-		 */
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Debug.Log ("pressed level skip");
 			StartCoroutine("goToNextLevel");//using this syntax rather than functionname() as param as that syntax wont work with StopCoroutine.		
@@ -57,19 +54,20 @@ public class Game10_Player : MonoBehaviour
 			collider.enabled = false;
 			return;
 		}
-		//If we have 0 lives left
+		//If the player has got game over (they either lost all their lives or sickness == max)
 		if (lives < 1||sickness>=100)
 		{			
-			//Kill
 			Time.timeScale=0; //this pauses the game
 			dead = true;
 			//Set collider to false-why have i repeated the code since its in the if(dead)-try commenting out to make sure its not used and so can safely delete
 			collider.enabled = false;
-			if(sickness>=100){
+			if(sickness>=100){ //just to see what was the reason of the player getting game over.
 				Debug.Log ("Game over-u puked");
 			}
 
 		}
+
+//-----------------------------------USING TOUCH INPUT-----------------------------------
 
 		//This code for touch repsonse is taken from the Android template, however its nothing that isnt in any tutorial. obviosy i ahd to chanf platfrom from droid to iOS
 		//If the game is running on a touch device
@@ -102,12 +100,10 @@ public class Game10_Player : MonoBehaviour
 		//should i put the call to the sickFaces class here?
 
 
-
-
 	}
 
 
-
+	//-----------------------------------THE COLLISONS------------------------------------------------------------//
 	/// <summary>
 	/// /This code is for collisions with the drinks and other objects. 
 	/// Sticking to beer will increase sickness a small amount but any other alcoholic drink will mean they mixed their
@@ -121,59 +117,58 @@ public class Game10_Player : MonoBehaviour
 				//this is getting to be a lot of different else ifs-change to a switch for v2.0!!!
 
 			switch (other.tag) {
-				//	case "Fruit":
-					case "badAlcohol":
-			other.GetComponent<alcoholicDrink>().Hit();
-					score -= 50;
-					sickness+=15;
-						break;
-	
-					case "Beer":
-			other.GetComponent<Beer>().Hit();
-			//Add score
-			score += 10;
-			sickness+=5;
 
-						break;	
+				case "badAlcohol":
+				other.GetComponent<alcoholicDrink>().Hit();
+						score -= 50;
+						sickness+=15;
+							break;
+		
+						case "Beer":
+				other.GetComponent<Beer>().Hit();
+				//Add score
+				score += 10;
+				sickness+=5;
 
-
-		case "SoftDrink":
-			other.GetComponent<Beer>().Hit();
-			//Add score
-			score += 50;
-			sickness-=5;
-			break;	
-
-		case "Food":
-			other.GetComponent<Beer>().Hit();
-			//Add score
-			score += 100;
-			sickness-=10;
-			break;	
+							break;	
 
 
+			case "SoftDrink":
+				other.GetComponent<Beer>().Hit();
+				//Add score
+				score += 50;
+				sickness-=5;
+				break;	
 
-		case "Enemy":
-			other.GetComponent<Game10_Bomb>().Hit();
-			score -= 200;
-			sickness +=20;
-			break;
+			case "Food":
+				other.GetComponent<Beer>().Hit();
+				//Add score
+				score += 100;
+				sickness-=10;
+				break;	
 
-				default:
-						Debug.Log ("Default case");
-			score += 0;
-			sickness +=0;
-						break;
-				}
 
-		Debug.Log (sickness);
+
+			case "Enemy":
+				other.GetComponent<Game10_Bomb>().Hit();
+				score -= 200;
+				sickness +=20;
+				break;
+
+					default:
+							Debug.Log ("Default case");
+				score += 0;
+				sickness +=0;
+							break;
+					}
+
+		Debug.Log ("sickness: "+sickness);
 		}
 
 
+	//-----------------------------------GUI MENU And HUD-----------------------------------//
 
-
-
-//currently this is the templates default gui. dont like it but need to have a menu of buttons since iphones dont have the phsyical back buttons of (pre current gen) android devices
+//currently this is the default gui. dont like it but need to have a menu of buttons since iphones dont have the phsyical back buttons of (pre current gen) android devices
 	void OnGUI()
 	{
 		GUI.skin = skin;
@@ -221,7 +216,7 @@ public class Game10_Player : MonoBehaviour
 }
 
 
-	/*Go to next Level*/
+	/*------------------------------------Go to next Level-----------------------------------*/
 
 IEnumerator goToNextLevel(){
 	//if (Application.loadedLevel >= Application.levelCount) 

@@ -36,6 +36,13 @@ my game u grab drink not smash a glass, but its weird code 2 look at cos instant
 * to see if theres a way to use a list or array and maybe use a dictionary so key(levelName) value(1 or 0 or strings ie true/false).
 */
 
+
+
+
+
+
+
+
 //------------------------NOTES TO SELF------------------------------------------------
 
 

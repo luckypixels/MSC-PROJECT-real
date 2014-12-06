@@ -629,6 +629,9 @@ MonoBehaviour:
   level4Unlocked: 0
   level5Unlocked: 0
   level6Unlocked: 0
+  score: 0
+  sickness: 0
+  lives: 0
 --- !u!1 &592319557
 GameObject:
   m_ObjectHideFlags: 0

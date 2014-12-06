@@ -38,11 +38,25 @@ public bool level4Unlocked = false;
 public bool level5Unlocked = false;
 public bool level6Unlocked  = false;
 
-/* these vars are currently implemented in the player class, that means that as each new level = new instance of player the vars r reset to 0, that might be a fairer game 4 sickness and lives but is not acceptable 4 score! 
+// these vars are currently implemented in the player class, that means that as each new level = new instance of player the vars r reset to 0, that might be a fairer game 4 sickness and lives but is not acceptable 4 score! 
 public int score;
 public int sickness;
 public int lives;
-*/
+
+
+///<code>
+	/// THIS IS FOR SAVING IN THE PLAYERPREFS SO DATA OF PLAYER PROGRESS LASTS OVER PLAY SESSIONS
+	/// 
+	/// 
+	/// 
+	/// 
+	/// 
+	/// 
+	/// 
+	/// </code>
+
+
+
 
 
 ///<remarks> 
@@ -61,15 +75,19 @@ public int lives;
 
 	void Awake(){
 		_instance = this;
-		//its weird that some tuts make out like dont destroy isnt actually needed...
-		//		DontDestroyOnLoad (GameObject this);
-		//Debug.Log ("hello from game manager");
+		//its static so i dont actually need dontdestroy... but just in case it goes weird its here
+		//DontDestroyOnLoad(gameObject);
 	}
 
 	// Use this for initialization
 	void Start () {
+		//this is obviosuly not of any use in final game its just a proof on concept value can b set via external script and across scenes :)
 		guiText.text = "the taxiscard unlocked is:"+ taxiInfoCardUnlocked.ToString(); //if u use the gui.Text object remember to set DoNotDestroy in awake() for it.
-		
+
+		//setting the initial values for the variables
+		lives = 3;
+		sickness = 0;
+		score = 0;
 
 	}
 
