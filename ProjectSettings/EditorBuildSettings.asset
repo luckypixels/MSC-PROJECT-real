@@ -24,4 +24,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NikGame/Scene/infoCardsThumbs.unity
   - enabled: 1
-    path: Assets/NikGame/Scene/infoCardsFULLVIEW.unity
+    path: Assets/NikGame/Scene/sickFacesTest.unity

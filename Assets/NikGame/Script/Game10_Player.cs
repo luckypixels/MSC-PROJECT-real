@@ -6,10 +6,13 @@ public class Game10_Player : MonoBehaviour
 	public GUISkin skin;	//GUI Skin
 	public int score;		//Score
 	public int lives;		//Lives
+	//since these are going to be used in the singleton class its not quite the same as here where need to have local refs-so does that mean the if lives==0 -> game over should be in the gamecontroller?
 
-	private GameObject levelManager; //just want to check the levelmanager is still active
-	//private GameObject time;
 
+
+
+
+	private GameObject sickFace;
 	public int sickness; //the health
 
 	//int timeLeft=getComponent<Timer>.timeForLevel;
@@ -20,7 +23,7 @@ public class Game10_Player : MonoBehaviour
 	void Start ()
 	{
 		//reset sickness in each level, or could have it so the var is persisitent across levels.
-		sickness = 0;
+		//sickness = 0;
 
 		///<remarks>The screen orientation and sleep timeout code is taken from the template</remarks>
 		//Set screen orientation to landscape
@@ -28,6 +31,7 @@ public class Game10_Player : MonoBehaviour
 		//Set sleep timeout to never ie dont let the screen go to sleep if inactive
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
+		//sickFace = GameObject.Find("sickFaces");
 	}
 	
 	void Update ()
@@ -61,6 +65,10 @@ public class Game10_Player : MonoBehaviour
 			dead = true;
 			//Set collider to false-why have i repeated the code since its in the if(dead)-try commenting out to make sure its not used and so can safely delete
 			collider.enabled = false;
+			if(sickness>=100){
+				Debug.Log ("Game over-u puked");
+			}
+
 		}
 
 		//This code for touch repsonse is taken from the Android template, however its nothing that isnt in any tutorial. obviosy i ahd to chanf platfrom from droid to iOS
@@ -89,6 +97,13 @@ public class Game10_Player : MonoBehaviour
 			//Set position
 			transform.position = new Vector3(pos.x,pos.y,0);
 		}
+
+
+		//should i put the call to the sickFaces class here?
+
+
+
+
 	}
 
 
@@ -110,14 +125,14 @@ public class Game10_Player : MonoBehaviour
 					case "badAlcohol":
 			other.GetComponent<alcoholicDrink>().Hit();
 					score -= 50;
-					sickness+=10;
+					sickness+=15;
 						break;
 	
 					case "Beer":
 			other.GetComponent<Beer>().Hit();
 			//Add score
 			score += 10;
-			sickness+=1;
+			sickness+=5;
 
 						break;	
 
@@ -133,26 +148,32 @@ public class Game10_Player : MonoBehaviour
 			other.GetComponent<Beer>().Hit();
 			//Add score
 			score += 100;
-			sickness-=5;
+			sickness-=10;
 			break;	
 
 
 
 		case "Enemy":
 			other.GetComponent<Game10_Bomb>().Hit();
+			score -= 200;
+			sickness +=20;
 			break;
 
 				default:
 						Debug.Log ("Default case");
+			score += 0;
+			sickness +=0;
 						break;
 				}
+
+		Debug.Log (sickness);
 		}
 
 
 
 
 
-//currently this is the templates default gui. dont like it but need to have a menu button since iphones dont have the phsyical back buttons of (pre current gen) android devices
+//currently this is the templates default gui. dont like it but need to have a menu of buttons since iphones dont have the phsyical back buttons of (pre current gen) android devices
 	void OnGUI()
 	{
 		GUI.skin = skin;
@@ -173,14 +194,13 @@ public class Game10_Player : MonoBehaviour
 		}
 
 
-/*
 		//Menu Button
 		if(GUI.Button(new Rect(Screen.width - 120,0,120,40),"Menu"))
 		{
 			//Load Menu scene
 			Application.LoadLevel("MainMenu");
 		}
-*/
+
 
 		//If dead
 		if (dead)

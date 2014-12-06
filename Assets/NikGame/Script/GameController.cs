@@ -38,6 +38,12 @@ public bool level4Unlocked = false;
 public bool level5Unlocked = false;
 public bool level6Unlocked  = false;
 
+/* these vars are currently implemented in the player class, that means that as each new level = new instance of player the vars r reset to 0, that might be a fairer game 4 sickness and lives but is not acceptable 4 score! 
+public int score;
+public int sickness;
+public int lives;
+*/
+
 
 ///<remarks> 
 /// player prefs could be implemented with strings key=levelOneUnlockedStatus value="true";
