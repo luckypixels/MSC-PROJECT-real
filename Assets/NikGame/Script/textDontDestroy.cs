@@ -13,7 +13,7 @@ public class textDontDestroy : MonoBehaviour {
 
 	void Awake(){
 		//textLabel.text = "hello level 1"; //this was just to make sure it all linked up okay
-		textLabel.text ="the taxi card is" + GameController._instance.taxiInfoCardUnlocked.ToString(); 
+		textLabel.text ="score" + GameController._instance.score.ToString(); 
 		DontDestroyOnLoad(textLabel); 
 
 	}

@@ -5,7 +5,6 @@ public class GuiButtonMethods : MonoBehaviour {
 	
 	// Use this for jumping to the next level, will use as the start button in the main title screen
 	public void goNextlevel () {
-		GameController._instance.callToGameObject(); //this shows that the objects are calling the gameManager class.
 		Application.LoadLevel ("LevelOne");
 	}
 

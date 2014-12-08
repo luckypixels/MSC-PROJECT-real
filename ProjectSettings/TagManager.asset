@@ -18,6 +18,7 @@ TagManager:
   - SoftDrink
   - Drink
   - badAlcohol
+  - infoCardPickup
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -41,7 +42,7 @@ TagManager:
   User Layer 19: Poison
   User Layer 20: Shot
   User Layer 21: Whsikey
-  User Layer 22: 
+  User Layer 22: infoCardPickup
   User Layer 23: 
   User Layer 24: 
   User Layer 25: 

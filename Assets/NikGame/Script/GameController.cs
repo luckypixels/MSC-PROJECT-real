@@ -44,6 +44,8 @@ public int sickness;
 public int lives;
 
 
+public bool SoundMuted; //theres a really weird bug in current sound stuff but i think its cos its not set in singleton & need a if(!null){don't allow new instance}
+
 ///<code>
 	/// THIS IS FOR SAVING IN THE PLAYERPREFS SO DATA OF PLAYER PROGRESS LASTS OVER PLAY SESSIONS
 	/// 
@@ -81,8 +83,7 @@ public int lives;
 
 	// Use this for initialization
 	void Start () {
-		//this is obviosuly not of any use in final game its just a proof on concept value can b set via external script and across scenes :)
-		guiText.text = "the taxiscard unlocked is:"+ taxiInfoCardUnlocked.ToString(); //if u use the gui.Text object remember to set DoNotDestroy in awake() for it.
+		//this is obviosuly not of any use in final game its just a proof on concept value can b set via external script and across scenes :)		guiText.text = "the taxiscard unlocked is:"+ taxiInfoCardUnlocked.ToString(); //if u use the gui.Text object remember to set DoNotDestroy in awake() for it.
 
 		//setting the initial values for the variables
 		lives = 3;
@@ -96,12 +97,6 @@ public int lives;
 	/// even if this object here is maintained across scenes, the textfield isnt 
 	/// so rather than piss about with creating textfields with same tags in levels or donotdestroy on gameobject text, lets just se a debug!.
 	/// </summary>
-	public void callToGameObject(){
-		// Debug.Log (Application.loadedLevelName); //commenting out since kno its working but keep for future use...
-		taxiInfoCardUnlocked = true;
-		Debug.Log ("Taxi Card is" +taxiInfoCardUnlocked);
-	}
-
 
 	//--------------------------THE METHOD FOR MANAGING THE UNLOCKING OF THE INFORMATION CARDS------------------
 
@@ -175,9 +170,26 @@ public int lives;
 					break;
 
 		}
-		//if levelThatCalled == ""; //oh bugger im using a string so does that mean i need to replace == with .Equals or something?
+	}
+
+
+//--------------------------Altering the score------------------------------
+
+
+	public void setScore(int amountToAlterBy){
+		score += amountToAlterBy;
+		}
+
+
+//--------------------------Altering the sickness------------------------------
+	
+	
+	public void setSickness(int amountToAlterBy){
+		sickness += amountToAlterBy;
 	}
 
 
 
-}
+
+
+}//class close
