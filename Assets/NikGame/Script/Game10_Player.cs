@@ -8,10 +8,10 @@ public class Game10_Player : MonoBehaviour
 	public int lives;		//Lives
 	//since these are going to be used in the singleton class its not quite the same as here where need to have local refs-so does that mean the if lives==0 -> game over should be in the gamecontroller?
 	public int sickness; //the health
-
-
+	public GameObject sickFaces; //the avatar graphic that sprite swaps depending on value of sickness var
+	//private SickFacesManager sickFaceRenderer;//getting its script ---->>>FUCK UNITY THIS ISNT WORKING, WHY DOES THE DOCUMENTATION LIE	
 	//int timeLeft=getComponent<Timer>.timeForLevel;
-	private GameObject sickFace; //the avatar graphic that sprite swaps depending on value of sickness var
+	//private SpriteRenderer sickFaceRenderer;
 	private Vector3 pos;	//Position that touch input was registered
 	private bool dead;		//If the player has died (allows to generate 'restart' buttons etc)
 
@@ -27,8 +27,21 @@ public class Game10_Player : MonoBehaviour
 		Screen.orientation = ScreenOrientation.Landscape;
 		//Set sleep timeout to never ie dont let the screen go to sleep if inactive
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		//transform.Find ("Hand").GetComponent<OtherScript> ().DoSomething ("Hello");
 
-		//sickFace = GameObject.Find("sickFaces");
+		/*
+		 * THE EXAMPLE FROM UNITY DOCS THAT I CAN USE SINCE UNITY IS PRETENDING THERES AN ERROR IN MY CODE WHEN ITS ACTUALLY COMPLETELY FINE.FUCK UNITY
+		 GameObject go = GameObject.Find("SomeGuy");
+        go.GetComponent<OtherScript>().DoSomething();
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<OtherScript>().DoSomething();
+		 */
+
+
+		/* this is probably not going to be used since the sprite altering is done in the obects own class-just need to have a public method
+		//spriteRenderer = GetComponent<SpriteRenderer>();
+		*/
+
 	}
 
 
@@ -119,13 +132,13 @@ public class Game10_Player : MonoBehaviour
 			switch (other.tag) {
 
 				case "badAlcohol":
-				other.GetComponent<alcoholicDrink>().Hit();
+			other.GetComponent<DrinkFoodCollision>().Hit();
 						score -= 50;
 						sickness+=15;
 							break;
 		
 						case "Beer":
-				other.GetComponent<Beer>().Hit();
+				other.GetComponent<DrinkFoodCollision>().Hit();
 				//Add score
 				score += 10;
 				sickness+=5;
@@ -134,14 +147,14 @@ public class Game10_Player : MonoBehaviour
 
 
 			case "SoftDrink":
-				other.GetComponent<Beer>().Hit();
+			other.GetComponent<DrinkFoodCollision>().Hit();
 				//Add score
 				score += 50;
 				sickness-=5;
 				break;	
 
 			case "Food":
-				other.GetComponent<Beer>().Hit();
+			other.GetComponent<DrinkFoodCollision>().Hit();
 				//Add score
 				score += 100;
 				sickness-=10;
@@ -150,9 +163,10 @@ public class Game10_Player : MonoBehaviour
 
 
 			case "Enemy":
-				other.GetComponent<Game10_Bomb>().Hit();
+			other.GetComponent<DrinkFoodCollision>().Hit();
 				score -= 200;
 				sickness +=20;
+				lives--;
 				break;
 
 					default:
@@ -162,8 +176,61 @@ public class Game10_Player : MonoBehaviour
 							break;
 					}
 
-		Debug.Log ("sickness: "+sickness);
+		//after doing whichever of the relevant cases the code should check if the game object with sickness face needs to be updated 
+		checkSicknessNeedChangeGraphic ();
 		}
+
+
+	//--------------------------------------Alter the sickness graphics----------------
+
+
+	void checkSicknessNeedChangeGraphic(){ //wow, thats as horribly long named a method that would be at home in objective C!
+
+//HERE SCRIPT, heres is the fuckign reference to the fucking script component on the fucking object u inane little cunt now fuck off 
+//and eat shit giving me bullshit error messages that are becsuse YOU dont fucking work.
+
+		sickFaces.GetComponent<sickFacesManager>(); //if i put this here its local only to this function but as this is only function that refers to it thats ok.
+		int sprite=0; //have to set up an init value cos the tuts that said declaring but not assiging an int defaults to zero were obviously wrong...
+
+		if (sickness <= 1 && sickness < 10) {    
+			sprite=1;
+		} 
+		
+		
+		else if (sickness>11 && sickness < 29){
+			sprite=2;
+		}
+		
+		else if (sickness>30 && sickness < 49){
+			sprite=3;
+		}
+		
+		
+		else if (sickness>50 && sickness< 69){
+				sprite=4;
+		}
+		
+		
+		else if (sickness>70 && sickness <90){
+			sprite = 5;
+		}
+		
+		else if (sickness>=90){   
+			sprite = 6;
+		}
+		Debug.Log ("reached end of check graphics, sprite= "+sprite);
+		sickFaces.GetComponent<sickFacesManager>().ChangeSprite(sprite);
+	} 
+
+
+
+
+
+
+
+
+
+
 
 
 	//-----------------------------------GUI MENU And HUD-----------------------------------//

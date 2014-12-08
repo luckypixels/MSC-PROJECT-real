@@ -49,7 +49,7 @@ public class Game10_SpawnFruit : MonoBehaviour
 		StartCoroutine("Spawn");
 
 //decide what time in the level the pickUp prefab gets spawned and also choose a position.
-//		timeToSpawnPickUp = (Random.Range (5, 60)); //if i decide to make the levels loger it'd be good to have a var of levelLength and pass this for the range's max value.
+//		timeToSpawnPickUp = (Random.Range (5, 60)); //if i decide to make the levels longer it'd be good to have a var of levelLength and pass this for the range's max value.
 
 	}
 
@@ -103,7 +103,7 @@ public class Game10_SpawnFruit : MonoBehaviour
 			prefab = kebab;
 			break;
 		default:
-			print ("Nik theres an error-no drink selected");
+			print ("theres an error-no drink selected");
 			break;
 		}
 	}
@@ -141,11 +141,11 @@ which is done with another randomrange for which drink.
 
 
 
-
+//The code below which instantiates the prefab (which was selected by the above code) is taken from the android template
 
 
 //---------------Now a prefab has been selected, generate it ---------------------------------
-		//Spawn prefab add randomc position
+		//Spawn prefab add randomx position
 		GameObject go = Instantiate(prefab,new Vector3(Random.Range(minX,maxX + 1),transform.position.y,0),Quaternion.Euler(0,0,Random.Range(-50, 50))) as GameObject;
 
 		//If x position is over 0 go left (ie world 0 s0 means centre of screen.)

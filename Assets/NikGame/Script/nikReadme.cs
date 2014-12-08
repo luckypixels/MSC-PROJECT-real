@@ -37,8 +37,9 @@ my game u grab drink not smash a glass, but its weird code 2 look at cos instant
 */
 
 
-
-
+//theres a  bunch of different classes with essentially the same .hit() code, if it is the the same then delete the obsolete classes
+	//put the hit()s into a single file and if there are differences then use a collision other.tag to decide which it is ie if tag=beer then amountForScore =+10 and jsut always 
+//tell the method to end with a call to alter the values of score and sickness by this amount.
 
 
 

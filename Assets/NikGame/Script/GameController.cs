@@ -103,6 +103,80 @@ public int lives;
 	}
 
 
+	//--------------------------THE METHOD FOR MANAGING THE UNLOCKING OF THE INFORMATION CARDS------------------
+
+	//NOTE THAT I MIGHT TWEAK THE 
+
+	public void unlockCard(string LevelThatCalled){ //this will take a param of what level called the function
+
+		switch (LevelThatCalled){
+		case "LevelOne":
+			print ("i will unlokc taxi info card");
+			taxiInfoCardUnlocked = true;
+			break;
+		case "LevelTwo":
+			print ("i will unlock battery info card");
+			batteryInfoCardUnlocked = true;
+			break;
+		case "LevelThree":
+			print ("i will unlokc eating info card");
+			eatInfoCardUnlocked = true;
+			break;
+		case "LevelFour":
+			print ("i will unlokc spiking drinking card");
+			spikingInfoCardUnlocked = true;
+			break;
+		case "LevelFive":
+			print ("i will unlokc soft drinks");
+			softDInfoCardUnlocked = true;
+			break;
+		case "LevelSix":
+			print ("i will unlock the kegal high card");
+			highsInfoCardUnlocked = true;
+			break;
+		default:
+			print ("not sure what level called the unlockLevel method in comtroller");
+			break;
+		}
+}
+
+	//---------------------------THE METHOD FOR UNLOCKING THE NEXT LEVEL-Means that the variable here will be updated can be used in a level select screen if i want to include 1 
+
+	public void unlockLevel(string levelThatCalled){ //takes a param of what level called the function then change bool for what is application.loadedLevelName+1
+
+		Debug.Log ("unlock level was called!!!");
+		switch (levelThatCalled){
+				case "LevelOne":
+					print ("i will unlokc level 2");
+					level2Unlocked = true;
+					break;
+				case "LevelTwo":
+					print ("i will unlokc level 3");
+					level3Unlocked = true;		
+					break;
+				case "LevelThree":
+					print ("i will unlokc level 4");
+					level4Unlocked = true;
+					break;
+				case "LevelFour":
+					print ("i will unlokc level 5");
+					level5Unlocked = true;
+					break;
+				case "LevelFive":
+					print ("i will unlokc level 6");
+					level6Unlocked = true;
+					break;
+				case "LevelSix":
+					print ("Game completed!");
+					//um nothing to do really since the levels complete, how congrats art and then return to menu
+					break;
+				default:
+					print ("not sure what level called the unlockLevel method in comtroller");
+					break;
+
+		}
+		//if levelThatCalled == ""; //oh bugger im using a string so does that mean i need to replace == with .Equals or something?
+	}
 
 
 

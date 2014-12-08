@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class instancing : MonoBehaviour {
-
-	public GameObject prefab;
+public class isSoundMuted : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-		Instantiate (prefab);
+	
 	}
 	
 	// Update is called once per frame

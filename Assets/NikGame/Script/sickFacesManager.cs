@@ -36,8 +36,10 @@ private SpriteRenderer spriteRenderer; //the var that refers to the gameObj's sp
 	/// new sprite stuff in v.4 can be a little bugg</description>
 
 
-
-	void ChangeSprite (int sickness) //ok putting the if(sickness==foo) here works for this practice but since it'll be being called via the player/gamecontroller following a collision with object it needs a proper method since cant call events like update!
+//this public method can be called by the other classes, ie they monitor the state of a var and make apprpriate calls. 
+//however, im keeping a commented out version of the original where all parts such as monitoring the range were done in same class, in case i need to tweak how it works etc.
+	/*
+	public void ChangeSprite (int sickness) //ok putting the if(sickness==foo) here works for this practice but since it'll be being called via the player/gamecontroller following a collision with object it needs a proper method since cant call events like update!
 	{
 		if (sickness <= 1 && sickness < 10) {    //the i'm not drunk yet part
 			print ("sprite1");
@@ -73,7 +75,43 @@ private SpriteRenderer spriteRenderer; //the var that refers to the gameObj's sp
 		}
 
 	}//close changeSprite()
+*/
 
+
+	public void ChangeSprite (int sickness) //ok putting the if(sickness==foo) here works for this practice but since it'll be being called via the player/gamecontroller following a collision with object it needs a proper method since cant call events like update!
+	{
+		if (sickness == 1) {    //the i'm not drunk yet part
+			spriteRenderer.sprite = sprite1;
+		} 
+		
+		
+		else if (sickness ==2){
+			spriteRenderer.sprite = sprite2;
+		}
+		
+		else if (sickness ==3){
+			print ("larger sprite pls");
+			spriteRenderer.sprite = sprite3;
+		}
+		
+		
+		else if (sickness == 4){
+			print ("larger sprite pls");
+			spriteRenderer.sprite = sprite4;
+		}
+		
+		
+		else if (sickness == 5){
+			print ("larger sprite pls");
+			spriteRenderer.sprite = sprite5;
+		}
+		
+		else if (sickness == 6){     //he's about to puke sprite
+			print ("larger sprite pls");
+			spriteRenderer.sprite = sprite6;
+		}
+		
+	}//close changeSprite()
 
 //so i was going to use switches because i thought i remembered using ranges in c ie case x >0 && x<20, but apparently 
 //cant use < > && || in c# switches according to documentation...meh.	

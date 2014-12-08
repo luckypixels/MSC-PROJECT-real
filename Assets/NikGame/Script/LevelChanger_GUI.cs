@@ -55,7 +55,7 @@ void OnGUI()  // this "if(GUI_Button)(foo)" syntax is actual syntax that has to 
 			//using text no art:
 			//if(GUI.Button(new Rect(Screen.width/2, Screen.height/2, 100, 30), "Change Level"))
 		{
-			Application.LoadLevel("infoCardsThumbs");
+			Application.LoadLevel("InfoCards");
 			
 		}
 		if (GUI.Button(new Rect(240, 240, 160, 40), "Select Level"))

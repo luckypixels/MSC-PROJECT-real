@@ -393,6 +393,7 @@ MonoBehaviour:
   score: 0
   lives: 3
   sickness: 0
+  sickFaces: {fileID: 666366629}
 --- !u!96 &778256632
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -524,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172a2ba6fc5694e039c661904db30fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeForLevel: 30
+  timeForLevel: 10
   countdown: {fileID: 0}
 --- !u!1 &1166904161
 GameObject:
