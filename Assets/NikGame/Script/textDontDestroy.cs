@@ -13,10 +13,19 @@ public class textDontDestroy : MonoBehaviour {
 
 	void Awake(){
 		//textLabel.text = "hello level 1"; //this was just to make sure it all linked up okay
-		textLabel.text ="score" + GameController._instance.score.ToString(); 
+		//textLabel.text ="score" + GameController._instance.score.ToString();
+				
 		DontDestroyOnLoad(textLabel); 
 
 	}
+
+	//seeing as the score isnt being updated it looks like i need to use the upadte()
+	void Update() 
+	{
+		textLabel.text ="Score: " + GameController._instance.score.ToString();
+	}
+
+
 
 	}
 

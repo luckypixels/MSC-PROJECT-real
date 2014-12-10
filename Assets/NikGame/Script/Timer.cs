@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour {
 			countdown.text = "Level Complete!";
 			//Time.timeScale = 0; //pauses game -i want to use this and indeed i should but it stops any other code running which  make it seemnthe apps crashed!!!
 			Debug.Log ("TIMES UP!");
-			StartCoroutine("goNextLevel");
+			goNextLevel();
 			//tell the gameContoller the next level is unlocked.
 			tellGCUnlockNextLevel();
 		}
@@ -63,9 +63,8 @@ public class Timer : MonoBehaviour {
 
 
 
-	IEnumerator goNextLevel(){
-		Debug.Log ("coroutiene called");
-		yield return new WaitForSeconds (2.0f);
+	void goNextLevel(){
+		if(Application.loadedLevel!=Application.levelCount) //need to check this isnt last level-means can add & delete levels but trade off is i'll need to put all non gameplay scenes B4 game itself in build settings in menu->plyBtn MUST call level1 by name and not currentllevel+1
 		Application.LoadLevel (Application.loadedLevel+1);
 		}
 

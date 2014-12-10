@@ -16,6 +16,9 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+	GameObject player; //for references to the player object so as to access vars that for teh time being should be in that since they should vary by instance
+
+
 public static GameController _instance; // this is lazy singleton method, just because its called lazy doesn't mean its cheating-its in packtpub books i paid good money for so its obviously legit!!!
 
 //vars to see if they can be accessed via other objects on other levels-actually cos the new ugui is being a pain im not (currently) using this
@@ -46,19 +49,6 @@ public int lives;
 
 public bool SoundMuted; //theres a really weird bug in current sound stuff but i think its cos its not set in singleton & need a if(!null){don't allow new instance}
 
-///<code>
-	/// THIS IS FOR SAVING IN THE PLAYERPREFS SO DATA OF PLAYER PROGRESS LASTS OVER PLAY SESSIONS
-	/// 
-	/// 
-	/// 
-	/// 
-	/// 
-	/// 
-	/// 
-	/// </code>
-
-
-
 
 
 ///<remarks> 
@@ -66,41 +56,59 @@ public bool SoundMuted; //theres a really weird bug in current sound stuff but i
 ///that way the values for the above bools will essentially be same value that key's val has
 /// as opposed to if(key's value==6666.777889){level2Unlocked=true;}.
 /// yes i'd rather use 1 & 0 ints for both above and the playerprefs but remember it seemed to not understand binary for bools last time!!!
-	/// </remarks>
+/// </remarks>
 
 
 
 //could look at the state of the bools IN ANOTHER SCRIPT with an OnGui.label saying "TaxiInfoCard is"+ use the vars above
 
 
-
-
 	void Awake(){
-		_instance = this;
-		//its static so i dont actually need dontdestroy... but just in case it goes weird its here
-		//DontDestroyOnLoad(gameObject);
-	}
+				_instance = this;
 
-	// Use this for initialization
+				//Find out if there aren't already any other instances of the object
+
+				if (_instance != null && _instance != this) {
+						//Destroy other instances
+						Destroy (gameObject);
+				}
+	
+		//Save the current singleton instance
+
+				else {
+						DontDestroyOnLoad (gameObject);
+				}  
+				//DontDestroyOnLoad(gameObject);
+
+				// THIS CODE REMOVES THE SPRITE COMPONENT FROM THE MENU SCREENS BUT AS ITS REMOVED IT MEANS ITS MISSING FROM LEVELS.IF I DID A CHECK FOR NULL REF CAN I (easily) ADD COMPONENT WITH ALL THE SETTINGS?
+//		if (Application.loadedLevelName.Contains ("Level") == false) {
+//			Debug.Log("I SHOULDNT B SEEING THE AVATAR");
+//			//gameObject.
+//			Destroy(gameObject.GetComponent("SpriteRenderer"));
+//		}
+//	
+
+		//gameObject.GetComponent<sickFacesManager> ().ChangeSprite (1000);
+		
+		if (Application.loadedLevelName.Contains ("Level") == false) {
+			print("shouldnt be seeing the avatar");
+						//dirty hack for solving this wretched problem of multiple instances of the avatar in the menus
+			//SpriteRenderer  spriteRenderer = GetComponent<SpriteRenderer>();
+			//spriteRenderer.sprite=null; 
+				}
+}//close awake
+
+
 	void Start () {
-		//this is obviosuly not of any use in final game its just a proof on concept value can b set via external script and across scenes :)		guiText.text = "the taxiscard unlocked is:"+ taxiInfoCardUnlocked.ToString(); //if u use the gui.Text object remember to set DoNotDestroy in awake() for it.
-
 		//setting the initial values for the variables
 		lives = 3;
 		sickness = 0;
 		score = 0;
-
+// fuck knows how set this up again		gameObject.GetComponent<ChangeSprite>(1000);
 	}
 
-	/// <summary>
-	/// So far i used accessing the text field however that was used in scene 1, 
-	/// even if this object here is maintained across scenes, the textfield isnt 
-	/// so rather than piss about with creating textfields with same tags in levels or donotdestroy on gameobject text, lets just se a debug!.
-	/// </summary>
 
 	//--------------------------THE METHOD FOR MANAGING THE UNLOCKING OF THE INFORMATION CARDS------------------
-
-	//NOTE THAT I MIGHT TWEAK THE 
 
 	public void unlockCard(string LevelThatCalled){ //this will take a param of what level called the function
 
@@ -178,15 +186,93 @@ public bool SoundMuted; //theres a really weird bug in current sound stuff but i
 
 	public void setScore(int amountToAlterBy){
 		score += amountToAlterBy;
-		}
+
+		
+		if (score  <= 0) 
+			score =0;
+
+	
+	}
 
 
 //--------------------------Altering the sickness------------------------------
 	
 	
 	public void setSickness(int amountToAlterBy){
+
+	
+
 		sickness += amountToAlterBy;
+
+		if (sickness <= 0) {
+			sickness=0;
+
+		}
+		if (sickness>=100){
+			sickness=100;
+			//this would mean that the player has died so call a relevant function
+			//playerDied();
+
+		}
 	}
+
+
+//--------------------------------CHECKING IF THE SPRITE OF SICKFACES NEEDS TO BE ALTERED-------
+
+	public void checkSicknessNeedChangeGraphic(){
+		
+	//	GameController._instance.GetComponent<sickFacesManager>(); 
+		gameObject.GetComponent<sickFacesManager>();  //referencing this class as it has the sprites loaded into it. 
+		int sprite=0; //have to set up an init value 
+
+		if (sickness <= 1 && sickness < 10) {    
+			sprite=1;
+		} 
+		
+		
+		else if (sickness>11 && sickness < 29){
+			sprite=2;
+		}
+		
+		else if (sickness>30 && sickness < 49){
+			sprite=3;
+		}
+		
+		
+		else if (sickness>50 && sickness< 69){
+			sprite=4;
+		}
+		
+		
+		else if (sickness>70 && sickness <90){
+			sprite = 5;
+		}
+		
+		else if (sickness>=90){   
+			sprite = 6;
+		}
+		//GameController._instance.GetComponent<sickFacesManager>().ChangeSprite(sprite);
+		gameObject.GetComponent<sickFacesManager>().ChangeSprite(sprite);
+	} 
+	
+//----------------------------------MOVING THE IF DEAD CODE FROM THE PLAYER CLASS-----------------
+
+	void playerDied(){
+
+//		print ("YOU HAVE DIED OF DYSENTRY");
+//		score=0;
+//	 player = GameObject.FindGameObjectWithTag("Player");
+//		player.GetComponent<Game10_Player> ().dead = true;;
+//	
+//
+//
+//		Time.timeScale=0; //this pauses the game. YES AND THEN IT MAKES IT LOOK LIKE THE GAMES CRASHED AFTER U PRESS REPLAY!!!!!!!!!
+//
+//
+//			Debug.Log ("Game over-u puked");
+
+	}
+
 
 
 

@@ -172,8 +172,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .026894249, y: .802000046}
   m_AnchorMax: {x: .026894249, y: .802000046}
-  m_AnchoredPosition: {x: 88, y: 2}
-  m_SizeDelta: {x: 174.5, y: 48}
+  m_AnchoredPosition: {x: 167.880005, y: 2}
+  m_SizeDelta: {x: 334.25, y: 48}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &89506652
 MonoBehaviour:
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 89506650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3025477313cd446c8ae98e88833f5bf6, type: 3}
+  m_Script: {fileID: 11500000, guid: bfae7626640ba41dd9962dde457bd781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 89506653}
@@ -469,7 +469,6 @@ MonoBehaviour:
   score: 0
   lives: 3
   sickness: 0
-  sickFaces: {fileID: 0}
   sicknessHUDText: {fileID: 0}
 --- !u!96 &778256632
 TrailRenderer:
@@ -815,8 +814,8 @@ GameObject:
   - 212: {fileID: 1857766340}
   - 54: {fileID: 1857766339}
   - 65: {fileID: 1857766338}
-  - 114: {fileID: 1857766337}
   - 114: {fileID: 1857766336}
+  - 114: {fileID: 1857766337}
   m_Layer: 22
   m_Name: infoCardPickup
   m_TagString: Beer

@@ -19,7 +19,7 @@ public class InfoCardPickUp : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		spriteRenderer.color = new Color (1f, 1f, 1f, 0.5f);
 		rigidbody.useGravity = false;
-	Debug.Log("hello from the pick up card");
+	//Debug.Log("hello from the pick up card");
 	Invoke ("movePrefabAndIncreaseColour", 0.9f);
 //		//try to find a way to add component and set the gravity to 1.3.it needs to appear static for .5 seconds and then get the rigidbody2d (2d allows 2 set level of gravity)
 	}

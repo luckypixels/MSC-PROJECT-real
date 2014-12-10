@@ -11,8 +11,8 @@ GameObject:
   - 212: {fileID: 21200000}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 22
   m_Name: infoCardPickup
   m_TagString: Beer
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11000013, y: 2.49000001, z: 0}
+  m_LocalPosition: {x: -4.59910965, y: -2.28561831, z: 0}
   m_LocalScale: {x: .275112569, y: .275112569, z: .275112569}
   m_Children: []
   m_Father: {fileID: 0}
