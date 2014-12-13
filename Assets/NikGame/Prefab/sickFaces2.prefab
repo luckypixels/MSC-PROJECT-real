@@ -9,13 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 54: {fileID: 5400000}
-  - 65: {fileID: 6500000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  m_Layer: 22
-  m_Name: infoCardPickup
-  m_TagString: infoCardPickup
+  m_Layer: 5
+  m_Name: sickFaces2
+  m_TagString: sickFaces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,38 +24,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.59910965, y: -2.28561831, z: 0}
-  m_LocalScale: {x: .275112569, y: .275112569, z: .275112569}
+  m_LocalPosition: {x: -5.32000017, y: 3.86999989, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!54 &5400000
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 48
-  m_CollisionDetection: 0
---- !u!65 &6500000
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.13999987, y: 1.13999999, z: .200000003}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,21 +37,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218c43e3669594a6abe6b5be8f56d7c8, type: 3}
+  m_Script: {fileID: 11500000, guid: c3db93ce0ff8d4c849ea3cd58b40dad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 100000, guid: 1422d3bdda7df4ec19e4ecc4dc35a037, type: 2}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f3f3912eeaf44ab797e2a6175aa62c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sprite1: {fileID: 21300000, guid: 8067c42fd52794e8782cf8dcbd34c2f4, type: 3}
+  sprite2: {fileID: 21300002, guid: 8067c42fd52794e8782cf8dcbd34c2f4, type: 3}
+  sprite3: {fileID: 21300004, guid: 8067c42fd52794e8782cf8dcbd34c2f4, type: 3}
+  sprite4: {fileID: 21300006, guid: 8067c42fd52794e8782cf8dcbd34c2f4, type: 3}
+  sprite5: {fileID: 21300008, guid: 8067c42fd52794e8782cf8dcbd34c2f4, type: 3}
+  sprite6: {fileID: 21300010, guid: 8067c42fd52794e8782cf8dcbd34c2f4, type: 3}
+  sprite7: {fileID: 21300000, guid: c17af34c057654d16b9b728f7dd95ac5, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -102,7 +67,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69c87e69e49e14b13aee70612ccef7ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c17af34c057654d16b9b728f7dd95ac5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -28,48 +28,68 @@ using System.Collections;
 
 public class SoundButton : MonoBehaviour {
 
-//--------------------------------------VARIABLES--------------------------------------------
-
+	//--------------------------------------VARIABLES--------------------------------------------
+	
 	//public GameObject audioSourceGameObj; -Can use this so that I can use inspector to set the musicObj, if do this can comment out the GameObject.Find("MusicObject"); 
 	bool soundMuted;//current state of the audio
 	GameObject soundsGameObject; //the reference to the object that has the audio component
 	AudioSource soundClip; //and its audio component
 
 
-//------------------------------------METHODS-----------------------------------------------
-	void Awake(){
-		soundMuted = true; //start the game with sounds turned off by default
+	private static SoundButton instance = null; //the private version
+	public static SoundButton Instance { //the public version which allows for access across all scripts
+		get { return instance; }
 	}
+	void Awake() {
+		if (instance != null && instance != this) { //if there is already an instance and its not this 1 being created
+			Destroy(this.gameObject);    //get rid of this 1 as its obsolete
+			Debug.Log ("delete extra copy of sound");
+			return;
+		} else {
+			instance = this;      //otherwise there isnt a previous instance so this 1 becomes the main 1
+			Debug.Log ("this is the only sound 2 plays");
+		} 
+		DontDestroyOnLoad(this.gameObject);  //ensure it persists across levels & hope it doesnt screw it up like with the gamecontroller
+	
+		//soundMuted = true; //start the game with sounds turned off by default
+	
+	}
+
+
+
+
+
+//------------------------------------METHODS-----------------------------------------------
 
 	void Start () {
 
-		soundsGameObject = GameObject.Find("MusicObject"); //find the object in the scene, no need to  
-		if(soundsGameObject != null)
-		{
-			Debug.Log ("i've got the music object");
-			soundClip = soundsGameObject.GetComponent<AudioSource>();
-				if(soundClip != null)
-				{
-					Debug.Log ("and its audio component");
-						// Mute Sound's Audio
-						soundClip.mute = true; 
-				}
-		}
+//		soundsGameObject = GameObject.Find("MusicObject"); //find the object in the scene, no need to  
+//		if(soundsGameObject != null)
+//		{
+//			Debug.Log ("i've got the music object");
+//			soundClip = soundsGameObject.GetComponent<AudioSource>();
+//				if(soundClip != null)
+//				{
+//					Debug.Log ("and its audio component");
+//						// Mute Sound's Audio
+//						soundClip.mute = true; 
+//				}
+//		}
 	}
 
 
 //the method for toggling sound on and off
-	public void soundButToggle(){
-		if (soundMuted) { //if sound muted is currently true then set to false and unmute the audio source, 
-			soundMuted=false;
-			soundClip.mute = false;
-		}
+//	public void soundButToggle(){
+//		if (soundMuted) { //if sound muted is currently true then set to false and unmute the audio source, 
+//			soundMuted=false;
+//			soundClip.mute = false;
+//		}
+//
+//		else{ //else it must currently be false-so set it to true!
+//			soundMuted=true;
+//			soundClip.mute = true;
+//		}
 
-		else{ //else it must currently be false-so set it to true!
-			soundMuted=true;
-			soundClip.mute = true;
-		}
-	}
 
 
 	//if (Input.touchCount == 1) - i only pasted this here in case i cant remember how to set up touch!!!

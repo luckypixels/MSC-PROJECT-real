@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skin: {fileID: 11400000, guid: 8f5b36a113a3e9a438dde61e94dac65f, type: 2}
   score: 0
-  lives: 3
+  lives: 1
   sickness: 0
   dead: 0
 --- !u!96 &778256632
@@ -441,7 +441,7 @@ GameObject:
   - 114: {fileID: 1097879748}
   m_Layer: 22
   m_Name: infoCardPickup
-  m_TagString: Beer
+  m_TagString: infoCardPickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,9 +597,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1166904162}
   m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: 1}
-  m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 24.5, y: -49}
+  m_AnchorMin: {x: .5, y: .921000063}
+  m_AnchorMax: {x: .5, y: .921000063}
+  m_AnchoredPosition: {x: 24.5, y: -31.9000015}
   m_SizeDelta: {x: 209, y: 64}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1128789594
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172a2ba6fc5694e039c661904db30fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeForLevel: 20
+  timeForLevel: 40
   countdown: {fileID: 0}
 --- !u!1 &1166904161
 GameObject:
@@ -739,9 +739,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1166904162}
   m_RootOrder: 3
-  m_AnchorMin: {x: .987000048, y: .802000046}
-  m_AnchorMax: {x: .987000048, y: .802000046}
-  m_AnchoredPosition: {x: -61, y: 2}
+  m_AnchorMin: {x: .987000048, y: .893802047}
+  m_AnchorMax: {x: .987000048, y: .893802047}
+  m_AnchoredPosition: {x: -61, y: 1}
   m_SizeDelta: {x: 174.5, y: 48}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1181827624
@@ -820,7 +820,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .026894249, y: .802000046}
   m_AnchorMax: {x: .026894249, y: .802000046}
-  m_AnchoredPosition: {x: 88, y: 2}
+  m_AnchoredPosition: {x: 88, y: 25.7000008}
   m_SizeDelta: {x: 174.5, y: 48}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1229726188

@@ -3,20 +3,11 @@ using System.Collections;
 
 public class DrinkFoodCollision : MonoBehaviour {
 
-	public GameObject score;    //The gui object of te score that is shown after player collects item
-	private bool canBeDestroyed;		//If we can destroy the object-ie the obj hasnt been collected by playe
-	private Vector3 screen;		//Position on the screen
-	//private int playerLives; -this is now redundant as im using a direct call to the singleton class
-	
-	/// <remarks>
-	/// to be honest i havent got a clue whats going on with this code atm, i think a lot of its redundant since its using 'fruit tags'. need to look into it to see if can delete/clean up cos its got a gameobject find in update ffs!
-	/// -By that i mean the stuff about rotatiin in start and the tag for beer is illogical-i think this is left over from the template and most can be deleted...
-	/// 
-	/// </remarks>
-	
 
+//this tells the game to generate the relevant score icon at the position where the collison with the drink/card/food object happened.
 
-	//---------------------------------------The collision event for the obect----------------------	
+	public GameObject score;    //The gui object of te score that is shown after player collects item-use inspector to set relevant values.
+
 	public void Hit()
 	{
 		
@@ -26,5 +17,4 @@ public class DrinkFoodCollision : MonoBehaviour {
 		Destroy(gameObject);
 		
 	}
-}//clsoe class
-
+}

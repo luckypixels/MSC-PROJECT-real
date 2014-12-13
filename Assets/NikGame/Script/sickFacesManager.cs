@@ -18,11 +18,13 @@ public Sprite sprite3;
 public Sprite sprite4;
 public Sprite sprite5; 
 public Sprite sprite6;
+public Sprite sprite7;
 
 public int sickness;
 
 private bool dead;		//If the player has died (allows to generate 'restart' buttons etc)
 
+private SpriteRenderer spriteRenderer; //the var that refers to the gameObj's sprite renderer
 
 
 public static sickFacesManager Instance {
@@ -32,12 +34,14 @@ public static sickFacesManager Instance {
 
 
 
-
-private SpriteRenderer spriteRenderer; //the var that refers to the gameObj's sprite renderer 
+ 
 
 //tell it to keep this across levels
 	void Awake(){
-
+		spriteRenderer = gameObject.GetComponent<SpriteRenderer> ();
+		spriteRenderer.sprite = sprite7;
+		Debug.Log ("hidden sprite as its main menu");
+		
 		//spriteRenderer.sprite = null;
 
 		Instance = this;
@@ -104,10 +108,10 @@ private SpriteRenderer spriteRenderer; //the var that refers to the gameObj's sp
 			spriteRenderer.sprite = sprite6;
 		}
 //
-//		else if(sickness ==1000){   //this is a test for trying to get the sprite to be switched off in menu 
-//			Debug.Log ("unity is a bag of shit");
-//			spriteRenderer.sprite = null;
-//		}
+	else if(sickness ==1000){   //this is a test for trying to get the sprite to be switched off in menu 
+	//else{
+			spriteRenderer.sprite = null;
+		}
 
 		}//close changeSprite()
 
