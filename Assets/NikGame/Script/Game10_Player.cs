@@ -43,7 +43,7 @@ public class Game10_Player : MonoBehaviour
 		}
 		if (Application.loadedLevelName.Contains ("Level") == false) {
 			
-				Debug.Log("I SHOULDNT B SEEING THE AVATAR");
+//				Debug.Log("I SHOULDNT B SEEING THE AVATAR");
 			//	GameController._instance.Destroy(gameObject.GetComponent("SpriteRenderer"));
 			
 		}
@@ -186,15 +186,15 @@ public class Game10_Player : MonoBehaviour
 				other.GetComponent<DrinkFoodCollision> ().Hit ();
 				GameController._instance.setScore(-200);
 				GameController._instance.setSickness(20);
-				lives--; //from user tests thers aquestion if sickness or #oflives should be reset across levels.game tradition = lives =global and health = level specific 
+				lives--; 
+		//from user tests thers a question if sickness or #oflives should be reset across levels.
+		//game tradition = lives =global and health = level specific 
 				break;
 				
 			case "infoCardPickup":
 			other.GetComponent<DrinkFoodCollision> ().Hit ();
-			Debug.Log("INFO CARD IN SWITCH CALLED OK");
-			GameController._instance.sickness+=0;
 			GameController._instance.unlockCard (Application.loadedLevelName); //tel the gamecontroller to set the bool for this card to be unlocked
-		    GameController._instance.score += 500;
+			GameController._instance.setScore(500);
 			break;
 
 

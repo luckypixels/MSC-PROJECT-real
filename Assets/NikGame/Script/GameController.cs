@@ -14,22 +14,6 @@ using UnityEngine.UI;
 /// </summary>
 
 
-///////////////////////////////////////NIK READ HERE
-
-
-//	
-//}
-
-/// 
-/// 
-/// 
-/// 
-///<code>
-
-
-
-
-
 public class GameController : MonoBehaviour {
 
 private static GameController instance = null;  //its private-only this gets called by the class
@@ -38,11 +22,7 @@ get { return instance; }
 }
 
 
-
-
 GameObject player; //for references to the player object so as to access vars that for teh time being should be in that since they should vary by instance
-
-
 
 
 
@@ -118,11 +98,66 @@ public int lives;
 
 
 
-	//public bool isCardUnlocked (string cardToCheck){
 
 	//if cardToCheck is unlocked return 'true' else return false.
-	//}
 
+	public bool isCardUnlocked (int cardToCheck){
+
+	//public string isCardUnlocked (int cardToCheck){ //version of the method header where string is return value.
+
+		switch (cardToCheck){
+		case 1:
+			if(spikingInfoCardUnlocked ==true)
+				{return true;}
+			else
+				{return false;}
+			break;
+		
+		case 2:
+
+			if (softDInfoCardUnlocked == true)
+				{return true;}
+			else
+				{return false;}
+			break;
+		
+		case 3:
+			if(batteryInfoCardUnlocked == true)
+				{return true;}
+			else
+				{return false;}
+			break;
+			
+		case 4:
+			if (taxiInfoCardUnlocked == true)
+				{return true;}
+			else
+				{return false;}
+			break;
+			
+		case 5:
+			if( eatInfoCardUnlocked == true)
+				{return true;}
+			else
+				{return false;}
+			break;
+			
+
+		case 6:
+			if (highsInfoCardUnlocked == true)
+				{return true;}
+			else
+				{return false;}
+			break;
+			
+
+		default:
+			print ("NOT sure what CARD called the ISCARDUNLOCKED method in comtroller");
+			return false;
+			break;
+
+			}
+	}
 
 
 
@@ -267,9 +302,6 @@ public int lives;
 /*
 //--------------------------------------UPDATING REFERENCE TO A SICKFACES MANAGER
 
-//having to do this because having faces as donotdestroy on load was casuing all sorts of problems when going from game->menu->game
-//threfore hav the faces as a new instance in each scene, thus setting up 1 ref in 1st scene is great but obviously the ref is destroyed on load to next level.
-//so what im attempting is that on each room load the new instance will send a reference of itself to the gamecontroller
 	public void getRefToSickFaces(GameObject sickFaceForLevel){
 		sickFaces2 = sickFaceForLevel;
 		Debug.Log ("updated ref to sickfaces obj");
