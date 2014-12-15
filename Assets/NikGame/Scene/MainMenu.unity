@@ -571,12 +571,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238b3cda3c1ae41cc9df2ec6d7e85676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taxiInfoCardUnlocked: 1
-  batteryInfoCardUnlocked: 1
-  highsInfoCardUnlocked: 1
-  spikingInfoCardUnlocked: 1
-  softDInfoCardUnlocked: 1
-  eatInfoCardUnlocked: 1
+  taxiInfoCardUnlocked: 0
+  batteryInfoCardUnlocked: 0
+  highsInfoCardUnlocked: 0
+  spikingInfoCardUnlocked: 0
+  softDInfoCardUnlocked: 0
+  eatInfoCardUnlocked: 0
   score: 0
   sickness: 0
   lives: 0
@@ -1015,7 +1015,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}
       propertyPath: taxiInfoCardUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}
       propertyPath: m_LocalScale.z
@@ -1032,23 +1032,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}
       propertyPath: batteryInfoCardUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}
       propertyPath: highsInfoCardUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}
       propertyPath: spikingInfoCardUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}
       propertyPath: softDInfoCardUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}
       propertyPath: eatInfoCardUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e95d6a58622549dd9df59dc893e8ff6, type: 2}

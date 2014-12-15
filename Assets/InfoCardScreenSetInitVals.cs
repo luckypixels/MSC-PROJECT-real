@@ -20,18 +20,26 @@ public class InfoCardScreenSetInitVals : MonoBehaviour {
 	//would be a for loop
 	//shoudl have the cards listed in an array so can loop w/ >array.size and also means can set values in each iteration
 
-		//cardBtn2.GetComponent<SpriteRenderer>().sprite=unlockedSprite;
-		Debug.Log(cardBtn2.name);		//image.sprite = unlockedSprite;
-
-
-		//
-		//Image imageComponent cardBtn2.GetComponent<Image>().sprite = unlockedSprite;
-		//}
-		//
-
-
-
-
+//want to import this an array and use a foreach or for each loop to loop and get init values but for 1st testing...
+		if (GameController._instance.isCardUnlocked (1)==true) {
+			cardBtn1.GetComponent<Button>().interactable = true;
+				}
+		if (GameController._instance.isCardUnlocked (2)==true) {
+			cardBtn2.GetComponent<Button>().interactable = true;
+		}
+		if (GameController._instance.isCardUnlocked (3)==true) {
+			cardBtn3.GetComponent<Button>().interactable = true;
+		}
+		if (GameController._instance.isCardUnlocked (4)==true) {
+			cardBtn4.GetComponent<Button>().interactable = true;
+		}
+		if (GameController._instance.isCardUnlocked (5)==true) {
+			cardBtn5.GetComponent<Button>().interactable = true;
+		}
+		if (GameController._instance.isCardUnlocked (6)==true) {
+			cardBtn6.GetComponent<Button>().interactable = true;
+		}
+	
 
 		//Image[] images;
 		//void Start()
