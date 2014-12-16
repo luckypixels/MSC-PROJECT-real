@@ -852,11 +852,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172a2ba6fc5694e039c661904db30fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeForLevel: 10
+  timeForLevel: 60
   countdown: {fileID: 1909603211}
-  maxX: 7
-  minX: -7
-  infocardSpawner: {fileID: 0}
+  infocardSpawner: {fileID: 1246253352}
 --- !u!114 &1909603211
 MonoBehaviour:
   m_ObjectHideFlags: 0

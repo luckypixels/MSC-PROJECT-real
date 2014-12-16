@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skin: {fileID: 11400000, guid: 8f5b36a113a3e9a438dde61e94dac65f, type: 2}
   score: 0
-  lives: 1
+  lives: 3
   sickness: 0
   dead: 0
 --- !u!96 &778256632

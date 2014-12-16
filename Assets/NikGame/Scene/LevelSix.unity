@@ -154,8 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3f3912eeaf44ab797e2a6175aa62c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerObj: {fileID: 0}
-  infocardSpawner: {fileID: 0}
 --- !u!114 &61586873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,11 +700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172a2ba6fc5694e039c661904db30fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeForLevel: 10
+  timeForLevel: 60
   countdown: {fileID: 827252744}
-  maxX: 7
-  minX: -7
-  infocardSpawner: {fileID: 0}
+  infocardSpawner: {fileID: 637953337}
 --- !u!114 &827252744
 MonoBehaviour:
   m_ObjectHideFlags: 0
