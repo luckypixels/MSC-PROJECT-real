@@ -23,7 +23,7 @@ get { return instance; }
 
 
 GameObject player; //for references to the player object so as to access vars that for teh time being should be in that since they should vary by instance
-
+//public GameObject sickFaces;
 
 
 //Vars to store the state of whether a card has been unlocked
@@ -230,75 +230,32 @@ public int lives;
 			sickness=100;
 			//this would mean that the player has died so call a relevant function
 			//playerDied();
-
 		}
+
+		//SEE IF NEED TO ALTER THE AVATAR'S SPRITE-CUD HAVE SICKNESS BEING CHECKED HERE AND THEN IT KNOWS IF VALUE HAS ALTERED ENOUGH TO CALL CHANGE SPRITE
+		//THAT MIGHT BE BEST AS IT REDUCES THE NEED TO CALL ACROSS OBJECTS O EACH COLLISION
+
+
+		//.checkSicknessNeedChangeGraphic ();
+
 	}
 
-	//SEEMS TO BREAK THE DAMN THING SO I'LL PUT THIS IN PLAYER AND ALLOW THAT TO CROSS REFERENCE BETWEEN THE FACES INSTANCE AND THIS PIECE OF CRAP CLASS
-//--------------------------------CHECKING IF THE SPRITE OF SICKFACES NEEDS TO BE ALTERED-------
 
-//	public void checkSicknessNeedChangeGraphic(){
-//		
-//	//	GameController._instance.GetComponent<sickFacesManager>(); 
-//		sickFaces2.GetComponent<facesManager2>();
-//		//gameObject.GetComponent<sickFacesManager>();  //referencing this class as it has the sprites loaded into it. 
-//		int spriteToRequest=0; //have to set up an init value 
-//
-//		if (sickness <= 1 && sickness < 10) {    
-//			spriteToRequest=1;
-//		} 
-//		
-//		
-//		else if (sickness>11 && sickness < 29){
-//			spriteToRequest=2;
-//		}
-//		
-//		else if (sickness>30 && sickness < 49){
-//			spriteToRequest=3;
-//		}
-//		
-//		
-//		else if (sickness>50 && sickness< 69){
-//			spriteToRequest=4;
-//		}
-//		
-//		
-//		else if (sickness>70 && sickness <90){
-//			spriteToRequest= 5;
-//		}
-//		
-//		else if (sickness>=90&&sickness <990){   
-//			spriteToRequest= 6;
-//		}
-//
-////		else if (sickness>=1000){   
-////			spriteToRequest = 7;
-////		}
-//
-//		//GameController._instance.GetComponent<sickFacesManager>().ChangeSprite(sprite);
-//		sickFaces2.GetComponent<sickFacesManager>().ChangeSprite(spriteToRequest);
-//	} 
-//	
 //----------------------------------MOVING THE IF DEAD CODE FROM THE PLAYER CLASS-----------------
 
 	void playerDied(){
 
-//		print ("YOU HAVE DIED OF DYSENTRY");
+//		print ("YOU HAVE DIED OF DYSENTRY"); //wonder if any1 will read my code & if they'll get the game this is a reference to...
 //		score=0;
 //	 player = GameObject.FindGameObjectWithTag("Player");
 //		player.GetComponent<Game10_Player> ().dead = true;;
 //	
-//
-//
-//		Time.timeScale=0; //this pauses the game. YES AND THEN IT MAKES IT LOOK LIKE THE GAMES CRASHED AFTER U PRESS REPLAY!!!!!!!!!
-//
-//
-//			Debug.Log ("Game over-u puked");
+//		Debug.Log ("Game over-u puked");
 
 	}
 
 
-//SINCE MY GAME KINDLY DECIDED TO COMPLETELY BREAK WITH A WEEK TO GO IM COMMENTING ALL SHIT TO DO WITH SICKFACES OUT FOR NOW.
+//SINCE MY GAME KINDLY DECIDED TO COMPLETELY BREAK WITH A WEEK TO GO IM COMMENTING ALL TO DO WITH SICKFACES OUT FOR NOW.
 /*
 //--------------------------------------UPDATING REFERENCE TO A SICKFACES MANAGER
 

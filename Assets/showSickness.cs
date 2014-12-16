@@ -7,7 +7,7 @@ public class showSickness : MonoBehaviour {
 	public 	Text textLabel;
 	
 	void Awake(){
-		textLabel.text ="im meant to show the sickness";
+		textLabel.text ="im meant to show the sickness";  //this shows when i test the game without having gone thru the mainmenu where the gamecomntroller is instantiated 
 		DontDestroyOnLoad(textLabel); 
 		
 	}

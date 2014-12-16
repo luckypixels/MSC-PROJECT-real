@@ -45,11 +45,14 @@ public class Game10_Player : MonoBehaviour
 			
 //				Debug.Log("I SHOULDNT B SEEING THE AVATAR");
 			//	GameController._instance.Destroy(gameObject.GetComponent("SpriteRenderer"));
-			
+
+
 		}
+
 		
 	}//close awake
-	
+
+
 	
 	
 //TRYING TO FIX THE BUG FROM HERE
@@ -75,12 +78,11 @@ public class Game10_Player : MonoBehaviour
 		
 		//	Allow me to skip between levels, this is obviously just for development period since pressing space bar isnt much use on an ipad
 		
-		//		if (Input.GetKeyDown (KeyCode.Space)) {
-		//			Debug.Log ("pressed level skip");
-		//			goToNextLevel();
-		//		}
-		
 				if (Input.GetKeyDown (KeyCode.Space)) {
+					Application.LoadLevel(Application.loadedLevel+1);
+				}
+		
+				if (Input.GetKeyDown (KeyCode.S)) {
 					Debug.Log ("sickness is: "+GameController._instance.sickness);
 				}
 
@@ -104,6 +106,7 @@ public class Game10_Player : MonoBehaviour
 			collider.enabled = false;
 			if(sickness>=100){ //just to see what was the reason of the player getting game over.
 				Debug.Log ("Game over-u puked");
+				GameController._instance.sickness=0;
 			}
 			else if(lives<1){
 				Debug.Log ("Game over-u drank spiked drinks");}
@@ -194,7 +197,7 @@ public class Game10_Player : MonoBehaviour
 			case "infoCardPickup":
 			other.GetComponent<DrinkFoodCollision> ().Hit ();
 			GameController._instance.unlockCard (Application.loadedLevelName); //tel the gamecontroller to set the bool for this card to be unlocked
-			GameController._instance.setScore(500);
+			GameController._instance.setScore(100);
 			break;
 
 

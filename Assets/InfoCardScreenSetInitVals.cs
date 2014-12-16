@@ -21,25 +21,26 @@ public class InfoCardScreenSetInitVals : MonoBehaviour {
 	//shoudl have the cards listed in an array so can loop w/ >array.size and also means can set values in each iteration
 
 //want to import this an array and use a foreach or for each loop to loop and get init values but for 1st testing...
-		if (GameController._instance.isCardUnlocked (1)==true) {
-			cardBtn1.GetComponent<Button>().interactable = true;
-				}
-		if (GameController._instance.isCardUnlocked (2)==true) {
-			cardBtn2.GetComponent<Button>().interactable = true;
-		}
-		if (GameController._instance.isCardUnlocked (3)==true) {
-			cardBtn3.GetComponent<Button>().interactable = true;
-		}
-		if (GameController._instance.isCardUnlocked (4)==true) {
-			cardBtn4.GetComponent<Button>().interactable = true;
-		}
-		if (GameController._instance.isCardUnlocked (5)==true) {
-			cardBtn5.GetComponent<Button>().interactable = true;
-		}
-		if (GameController._instance.isCardUnlocked (6)==true) {
-			cardBtn6.GetComponent<Button>().interactable = true;
-		}
-	
+//		if (GameController._instance.isCardUnlocked (1)==true) {
+//			cardBtn1.GetComponent<Button>().interactable = true;
+//			//cardBtn1.GetComponent<Button>().guiText=;
+//				}
+//		if (GameController._instance.isCardUnlocked (2)==true) {
+//			cardBtn2.GetComponent<Button>().interactable = true;
+//		}
+//		if (GameController._instance.isCardUnlocked (3)==true) {
+//			cardBtn3.GetComponent<Button>().interactable = true;
+//		}
+//		if (GameController._instance.isCardUnlocked (4)==true) {
+//			cardBtn4.GetComponent<Button>().interactable = true;
+//		}
+//		if (GameController._instance.isCardUnlocked (5)==true) {
+//			cardBtn5.GetComponent<Button>().interactable = true;
+//		}
+//		if (GameController._instance.isCardUnlocked (6)==true) {
+//			cardBtn6.GetComponent<Button>().interactable = true;
+//		}
+//	
 
 		//Image[] images;
 		//void Start()
@@ -68,7 +69,7 @@ public class InfoCardScreenSetInitVals : MonoBehaviour {
 	{Debug.Log("initting the carsds values");}
 	
 		for (int i = 0; i < 6; i++) {
-			Debug.Log(i);
+			Debug.Log(GameController._instance.isCardUnlocked (i));
 		}
 	
 	

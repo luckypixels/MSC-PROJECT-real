@@ -17,3 +17,11 @@ EditorBuildSettings:
     path: Assets/NikGame/Scene/LevelOne.unity
   - enabled: 1
     path: Assets/NikGame/Scene/LevelTwo.unity
+  - enabled: 1
+    path: Assets/NikGame/Scene/LevelThree.unity
+  - enabled: 1
+    path: Assets/NikGame/Scene/LevelFour.unity
+  - enabled: 1
+    path: Assets/NikGame/Scene/LevelFive.unity
+  - enabled: 1
+    path: Assets/NikGame/Scene/LevelSix.unity
