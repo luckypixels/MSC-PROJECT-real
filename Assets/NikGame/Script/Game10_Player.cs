@@ -21,23 +21,16 @@ public class Game10_Player : MonoBehaviour
 	private bool need2PressReady=true; //this decides if the player needs to confirm that they're redy to play thus timescale will =1;
 	//	public Text sicknessHUDText; //IF i make it so sickness level persists across levels then this can be altered since the var would be in the singleton not here and only with current instance scope
 	
-	
-	//NIK LOOK HERE!
-	//removing reference sickfaces for now cos Unity decidded t break my game
-	//public GameObject sickFaces2;//the avatar graphic that sprite swaps depending on value of sickness var
-	
+	public GameObject sickFaces; 
 	//--------------------------------------INITILISATION-------------------------------------------------------------
 	
 	void Awake (){
 		if (Application.loadedLevelName.Contains ("Level")) { //ignore the stuff below if this is a 'menu' scene rather than actual gameplay level.
 			
-			
-			//NIK LOOK HERE
-			///<code>
-			//			checkSicknessNeedChangeGraphic();   //when player dies and hits restart the sickness var is reset to 0 but i forgot to update the avatar, hence calling the method now.
-			///</code>
-			//each level starts paused & requires the player to confirm they are ready to play 
-			//this fixes the issue that if the player dies the timescale==0, press replay and it looks like app crashed since it was still in 0 timescale
+			//facesManager2 sickFaces = sickFacesObj.GetComponent<facesManager2>();
+
+			//sickFaces.checkSicknessNeedChangeGraphic();
+
 			Time.timeScale=0 ;
 			need2PressReady =true; 
 		}
@@ -205,6 +198,8 @@ public class Game10_Player : MonoBehaviour
 				Debug.Log ("Default case");
 				print ("UNKNOWN COLLISON OCCURED");
 				break;
+	
+		
 			}
 			
 			
@@ -216,12 +211,13 @@ public class Game10_Player : MonoBehaviour
 //sickness was added from collision-now check if that has killed the palyer
 			if(GameController._instance.sickness>=100)
 				{dead=true;  //think this doesnt really do much here since i moved all functionality to gamecontroller, so hre it simpley allows ongui to be called
-				Debug.Log("player shoudl be dead now");
+				Debug.Log("player shoudl be dead now SICKNESS =100 CALLED DIE");
 			Time.timeScale=0;
 				}
 //			Debug.Log("dead in PLAYER was set to tru");}
 //	
-		
+		checkSicknessNeedChangeGraphic();
+
 
 	}//close collsion method
 	
@@ -253,7 +249,7 @@ public class Game10_Player : MonoBehaviour
 
 			//GameController._instance.sickness=1000; //this was being used to 'trick' the class into having a value that is empty.commented out cos its just an invite for bugs!
 			//gameObject.GetComponent<sickFacesManager>().ChangeSprite(7);
-			//checkSicknessNeedChangeGraphic(){
+			//checkSicknessNeedChangeGraphic();
 			
 			
 			
@@ -298,18 +294,12 @@ public class Game10_Player : MonoBehaviour
 	
 	/////////////////NIK LOOK HERE////
 	//COMMENTING OUT ALL REFENCES TO THE SICKFACES COS UNITY SO KIDLY DECDED TO BREAK MY GAME WITH THEM IN
-	/*
+
 	/// 
-///<Summary>
-//	Since I Canvas't get the stupid gamecontroller to accept updated references to the sickFaces Obj i'll let the player object act 
-//as the go between...
-/// </Summary>
+
 
 public void checkSicknessNeedChangeGraphic(){
 
-	//Due to the gamecontroller class being a pain i'm using a local ref to store the score which is saved in the controller class and evaluate it here to call to change sprites as needed
-
-	sickFaces2.GetComponent<facesManager2>(); //referencing this class as it has the sprites loaded into it. 
 
 	int spriteToRequest=0; //have to set up an init value 
 
@@ -345,11 +335,11 @@ public void checkSicknessNeedChangeGraphic(){
 	//		}
 
 
-	sickFaces2.GetComponent<facesManager2>().ChangeSprite(spriteToRequest);
+	sickFaces.GetComponent<facesManager2>().ChangeSprite(spriteToRequest);
+		Debug.Log ("player called change sprite");
 } 
 
-
-*/
+	
 
 
 }//close class

@@ -462,6 +462,7 @@ MonoBehaviour:
   lives: 3
   sickness: 0
   dead: 0
+  sickFaces: {fileID: 600300207}
 --- !u!96 &778256632
 TrailRenderer:
   m_ObjectHideFlags: 0

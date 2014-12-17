@@ -12,7 +12,7 @@ public class cardThumbOnPress : MonoBehaviour {
 	//set the state of the bool that triggers the anims state to private.
 	private bool isPaused =false; //default to not paused
 
-
+	public bool isUnlocked;
 
 	void Start () {
 		//Time.timeScale = 1; //not paused
@@ -79,11 +79,13 @@ public class cardThumbOnPress : MonoBehaviour {
 			if (GameController._instance.isCardUnlocked (cardID) == true) {
 						Debug.Log ("i can show u taht card");
 						//FindObjectWithName.ShowCard();
+						enabled = true;
 						ShowCard();
 
 				} else {
-						Debug.Log ("sorry the card is still locked");
-						HideCard();
+									
+			Debug.Log ("sorry the card is still locked");
+						
 				}
 
 

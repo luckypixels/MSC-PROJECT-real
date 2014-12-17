@@ -35,55 +35,51 @@ public class facesManager2 : MonoBehaviour {
 
 
 
-//--------------------------------CHECKING IF THE SPRITE OF SICKFACES NEEDS TO BE ALTERED-------
+////--------------------------------CHECKING IF THE SPRITE OF SICKFACES NEEDS TO BE ALTERED-------
+//
+//	public void checkSicknessNeedChangeGraphic(){
+//
+//
+//		if (sickness <= 1 && sickness < 10) {    
+//			spriteToRequest=1;
+//		} 
+//		
+//		
+//		else if (sickness>11 && sickness < 29){
+//			spriteToRequest=2;
+//		}
+//		
+//		else if (sickness>30 && sickness < 49){
+//			spriteToRequest=3;
+//		}
+//		
+//		
+//		else if (sickness>50 && sickness< 69){
+//			spriteToRequest=4;
+//		}
+//		
+//		
+//		else if (sickness>70 && sickness <90){
+//			spriteToRequest= 5;
+//		}
+//		
+//		else if (sickness>=90&&sickness <990){   
+//			spriteToRequest= 6;
+//  		}
+//
+//		else if (sickness>=1000){   
+//			spriteToRequest = 7;
+//		}
+//
+////////		//GameController._instance.GetComponent<sickFacesManager>().ChangeSprite(sprite);
+//	ChangeSprite(spriteToRequest);
+//	Debug.Log("sprite shud be :" +spriteToRequest);
+//
+//
+//} 
 
-	public void checkSicknessNeedChangeGraphic(){
 
 
-		if (sickness <= 1 && sickness < 10) {    
-			spriteToRequest=1;
-		} 
-		
-		
-		else if (sickness>11 && sickness < 29){
-			spriteToRequest=2;
-		}
-		
-		else if (sickness>30 && sickness < 49){
-			spriteToRequest=3;
-		}
-		
-		
-		else if (sickness>50 && sickness< 69){
-			spriteToRequest=4;
-		}
-		
-		
-		else if (sickness>70 && sickness <90){
-			spriteToRequest= 5;
-		}
-		
-		else if (sickness>=90&&sickness <990){   
-			spriteToRequest= 6;
-  		}
-
-		else if (sickness>=1000){   
-			spriteToRequest = 7;
-		}
-
-//////		//GameController._instance.GetComponent<sickFacesManager>().ChangeSprite(sprite);
-		//sickFaces2.GetComponent<sickFacesManager>().ChangeSprite(spriteToRequest);
-	Debug.Log("sprite shud be :" +spriteToRequest);
-
-
-} 
-
-}//close class
-	
-
-/*
-
-/*
 
 	public void ChangeSprite (int sickness) //ok putting the if(sickness==foo) here works for this practice but since it'll be being called via the player/gamecontroller following a collision with object it needs a proper method since cant call events like update!
 		{
@@ -124,4 +120,5 @@ public class facesManager2 : MonoBehaviour {
 //			}s
 			
 		}//close changeSprite()
-*/
+}//close class
+

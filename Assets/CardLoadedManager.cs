@@ -3,10 +3,44 @@ using System.Collections;
 
 public class CardLoadedManager : MonoBehaviour {
 
+
+	public GameObject card1;
+	public GameObject card2;
+	public GameObject card3;
+	public GameObject card4;
+	public GameObject card5;
+	public GameObject card6;
+
+	public GameObject thumb1;
+	public GameObject thumb2;
+	public GameObject thumb3;
+	public GameObject thumb4;
+	public GameObject thumb5;
+	public GameObject thumb6;
+
+
+
+
+
+//	//need to check what carsds are unlocked when the scene awakes
+//	if (GameController._instance.isCardUnlocked (cardID) == true) {
+//		//Debug.Log ("i can show u taht card");
+//		//FindObjectWithName.ShowCard();
+//		enabled = true;
+//		//ShowCard();
+//		
+//	} else {
+//
+
+
+
+
+
+
 	//probably also want a var that stoeres reference to current loaded so that way if card 1 is loaded and card 2 thum pressed can call card 1's hide();
 	GameObject currentLoadedCard; //i it a game object? its a little confusig to knw wht datatype to declare since its an image of the ugui... 
 
-	 bool isACardLoaded; //ITS PRIVATE BUT IMPLEMENT A PUBLIC METHOD FOR IT.
+	public bool isACardLoaded; //PROBABLY IT SHOULD BE PRIVATE BUT IMPLEMENT A PUBLIC METHOD FOR IT.
 
 	// Use this for initialization
 	void Start () {
@@ -35,3 +69,58 @@ public class CardLoadedManager : MonoBehaviour {
 	
 	}
 }
+
+
+///////////////////////////////////////
+	/*
+	 void Awake(){
+	int cardID = 0;
+	
+	switch (gameObject.name) 
+		
+	{
+	case "SpikingInfoCardBtn":
+		Debug.Log ("called spiking");
+		cardID =1;	
+		break;
+		
+		
+	case "SoftDrinkInfoCardBtn":
+		Debug.Log ("called softdrinsk");
+		cardID =2;	
+		break;
+		
+	case "BatteryInfoCardBtn":
+		Debug.Log ("called battery");
+		cardID=3;	
+		break;
+		
+		
+	case "TaxiInfoCardBtn":
+		Debug.Log ("called taxi");
+		cardID=4;
+		break;
+		
+		
+	case "EatInfoCardBtn":
+		Debug.Log ("called eat");
+		cardID=5;	
+		break;
+		
+		
+	case "LegalInfoCardBtn":
+		Debug.Log ("called legal Highs");
+		cardID =6;	
+		break;
+		
+		
+		
+	default:
+		Debug.Log ("unknown card button pressed");
+		break;
+	}
+	
+}
+	 
+	*/
+
