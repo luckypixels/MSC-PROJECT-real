@@ -157,31 +157,37 @@ public class Game10_Player : MonoBehaviour
 				other.GetComponent<DrinkFoodCollision> ().Hit ();
 				GameController._instance.setScore(-50);
 				GameController._instance.setSickness(15);
+			SoundEffectsManager.Instance.BadDrinkSound();
 				break;
 				
 			case "Beer":
 				other.GetComponent<DrinkFoodCollision> ().Hit ();
 				GameController._instance.setScore(10);
 				GameController._instance.setSickness(2);
-				break;	
+			SoundEffectsManager.Instance.GoodDrinkSound();	
+			break;	
 				
 				
 			case "SoftDrink":
 				other.GetComponent<DrinkFoodCollision> ().Hit ();
 				GameController._instance.setScore(50);
 				GameController._instance.setSickness(-5);
-				break;	
+			SoundEffectsManager.Instance.OpenCanSound();
+
+			break;	
 				
 			case "Food":
 				other.GetComponent<DrinkFoodCollision> ().Hit ();
 				GameController._instance.setScore(100);
 				GameController._instance.setSickness(-10);
-				break;	
+			SoundEffectsManager.Instance.FoodSound();	
+			break;	
 				
 			case "Enemy":
 				other.GetComponent<DrinkFoodCollision> ().Hit ();
 				GameController._instance.setScore(-200);
 				GameController._instance.setSickness(20);
+			SoundEffectsManager.Instance.SpikedDrinkSound();
 				lives--; 
 		//from user tests thers a question if sickness or #oflives should be reset across levels.
 		//game tradition = lives =global and health = level specific 
@@ -191,6 +197,7 @@ public class Game10_Player : MonoBehaviour
 			other.GetComponent<DrinkFoodCollision> ().Hit ();
 			GameController._instance.unlockCard (Application.loadedLevelName); //tel the gamecontroller to set the bool for this card to be unlocked
 			GameController._instance.setScore(100);
+			SoundEffectsManager.Instance.PickUpSound();
 			break;
 
 

@@ -540,6 +540,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 537283826}
   - 114: {fileID: 537283827}
+  - 114: {fileID: 537283828}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -581,6 +582,23 @@ MonoBehaviour:
   score: 0
   sickness: 0
   lives: 0
+--- !u!114 &537283828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 537283825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c641ff3982e52404697dfe737c70bce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodDrinkSound: {fileID: 8300000, guid: a2bc5e0557747429dae894362eb8a1e2, type: 3}
+  softDSound: {fileID: 8300000, guid: f372b394a5bdf4e4ea90461c9739f23e, type: 3}
+  badDrinkSound: {fileID: 8300000, guid: 3d09bc66fb76a410bb3f5779d26afec7, type: 3}
+  spikedDrinkSound: {fileID: 8300000, guid: 53e95e4cd221f4e9b8e304c5c11ca7ec, type: 3}
+  foodSound: {fileID: 8300000, guid: 2f4bd393ab90c4223a94fcbb7c57584b, type: 3}
+  pickUpSound: {fileID: 8300000, guid: b99585ca34d604c09ab9fca91585651c, type: 3}
 --- !u!1 &592319557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1543,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: cba2538823e42d74ba4b921713d27f3d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .856000006
+  m_Volume: .200000003
   m_Pitch: 1
   Loop: 1
   Mute: 0

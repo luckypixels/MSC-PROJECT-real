@@ -40,7 +40,7 @@ public class CardLoadedManager : MonoBehaviour {
 	//probably also want a var that stoeres reference to current loaded so that way if card 1 is loaded and card 2 thum pressed can call card 1's hide();
 	GameObject currentLoadedCard; //i it a game object? its a little confusig to knw wht datatype to declare since its an image of the ugui... 
 
-	public bool isACardLoaded; //PROBABLY IT SHOULD BE PRIVATE BUT IMPLEMENT A PUBLIC METHOD FOR IT.
+	public bool isACardLoaded; //PROBABLY IT SHOULD BE§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ PRIVATE BUT IMPLEMENT A PUBLIC METHOD FOR IT.
 
 	// Use this for initialization
 	void Start () {
