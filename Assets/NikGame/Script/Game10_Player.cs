@@ -250,6 +250,8 @@ public class Game10_Player : MonoBehaviour
 			//Menu Button
 			if (GUI.Button (new Rect (Screen.width - 120, 0, 120, 40), "Menu")) {
 				//Load Menu scene
+				GameController._instance.sickness=0;
+				GameController._instance.score=0;
 				Application.LoadLevel ("MainMenu");
 			}
 
