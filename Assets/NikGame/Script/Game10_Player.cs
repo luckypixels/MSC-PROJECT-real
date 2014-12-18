@@ -213,7 +213,7 @@ public class Game10_Player : MonoBehaviour
 ///NIK LOOK HERE
 			
 	//after doing whichever of the relevant cases the code should check if the game object with sickness face needs to be updated 
-///	checkSicknessNeedChangeGraphic ();
+	checkSicknessNeedChangeGraphic ();
 
 //sickness was added from collision-now check if that has killed the palyer
 			if(GameController._instance.sickness>=100)
@@ -223,8 +223,8 @@ public class Game10_Player : MonoBehaviour
 				}
 //			Debug.Log("dead in PLAYER was set to tru");}
 //	
-		checkSicknessNeedChangeGraphic();
-
+		//checkSicknessNeedChangeGraphic();
+		//sickFaces.GetComponent<facesManager2>().ChangeSprite(4);
 
 	}//close collsion method
 	
@@ -309,6 +309,8 @@ public class Game10_Player : MonoBehaviour
 
 public void checkSicknessNeedChangeGraphic(){
 
+ int sickness	= GameController._instance.getSickness ();
+		Debug.Log ("checking sickness");
 
 	int spriteToRequest=0; //have to set up an init value 
 

@@ -42,7 +42,8 @@ the vars are reset to 0, that might be a fairer game 4 sickness and lives but is
 */
 public int sickness;
 public int lives;
-	
+
+	public int highscore; //i dont think its worht having the feature of a high score but here is it if target users request it...
 
 //commenting out the 
 //public GameObject sickFaces2;
@@ -92,11 +93,22 @@ public int lives;
 	void Start () {
 		//setting the initial values for the variables
 		lives = 3;
-		sickness = 0;
-		score = 0;
+		initialiseSicknessAndScore();
 	}
 
 
+
+	public void initialiseSicknessAndScore(){   //this method can be called when player exits game or gets game over, thus the vars here can be private.
+		sickness= 0;
+		score=0;
+	}
+
+
+
+	public void CheckUpdateHighScore(){
+		if(score>highscore)
+		{highscore = score;} //if decide to use persistent storage change highscore to be called out of player prefs
+	}
 
 
 	//if cardToCheck is unlocked return 'true' else return false.
@@ -211,9 +223,8 @@ public int lives;
 
 	
 	}
-
-
-//--------------------------Altering the sickness------------------------------
+	
+//--------------------------Altering the sickness AND A GETTER FOR IT------------------------------
 	
 	
 	public void setSickness(int amountToAlterBy){
@@ -238,6 +249,12 @@ public int lives;
 
 		//.checkSicknessNeedChangeGraphic ();
 
+	}
+
+	
+
+	public int getSickness(){
+		return sickness;
 	}
 
 

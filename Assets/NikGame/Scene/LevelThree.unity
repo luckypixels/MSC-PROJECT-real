@@ -444,6 +444,7 @@ MonoBehaviour:
   lives: 3
   sickness: 0
   dead: 0
+  sickFaces: {fileID: 0}
 --- !u!96 &778256632
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -655,7 +656,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 50eac0045cad44caebc4666aa7121803, type: 3}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
